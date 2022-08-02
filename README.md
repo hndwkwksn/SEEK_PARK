@@ -2,7 +2,7 @@
 
 ## サイト概要
 ### サイトテーマ
-自分の好きな公園を見つけい人が集まるSNSサイト
+自分の好きな公園を見つけたい人が集まるSNSサイト
 
 ### テーマを選んだ理由
 公園は老若男女問わず利用出来る場所です。そして利用の理由も人によって様々です。
@@ -24,7 +24,12 @@
 - 利用目的に合った公園を探したいとき
 
 ## 設計書
-完成次第追加
+### UIflow
+- エンド
+https://drive.google.com/file/d/1rf_27dmr568dmD1NwdrrsqX_W1SDYj5q/view?usp=sharing
+***
+- 管理者
+https://drive.google.com/file/d/1R8DT9ghc8ZPjzJIRo4ta3QerhMv4BYD0/view?usp=sharing
 
 ## 開発環境
 - OS：Linux(CentOS)
