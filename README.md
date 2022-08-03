@@ -30,8 +30,8 @@ https://drive.google.com/file/d/1rf_27dmr568dmD1NwdrrsqX_W1SDYj5q/view?usp=shari
 - 管理者
 https://drive.google.com/file/d/1R8DT9ghc8ZPjzJIRo4ta3QerhMv4BYD0/view?usp=sharing
 ***
-- ER図
-https://drive.google.com/file/d/1fOaKY--fc1or2SuDsjPyhfwWDQa6TYsS/view?usp=sharing
+## ER図
+![ER図_SEEK_PARK drawio](https://user-images.githubusercontent.com/105696893/182520479-a4b29fa6-51ea-4730-bcf3-8bc86ba403a6.png)
 
 ## 開発環境
 - OS：Linux(CentOS)
