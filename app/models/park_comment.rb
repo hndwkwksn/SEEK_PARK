@@ -1,0 +1,2 @@
+class ParkComment < ApplicationRecord
+end
