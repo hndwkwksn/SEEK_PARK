@@ -26,12 +26,12 @@
 ## 設計書
 ### UIflow
 - エンド
-https://drive.google.com/file/d/1rf_27dmr568dmD1NwdrrsqX_W1SDYj5q/view?usp=sharing
+https://drive.google.com/file/d/11aziVQ3pyMNp8gJzQOVa-jGVx6sk53AO/view?usp=sharing
 - 管理者
-https://drive.google.com/file/d/1R8DT9ghc8ZPjzJIRo4ta3QerhMv4BYD0/view?usp=sharing
+https://drive.google.com/file/d/1bWcC-Envo0Ix-7YIvxiIXRrXkOfvoowA/view?usp=sharing
 ***
 ## ER図
-![ER図_SEEK_PARK drawio](https://user-images.githubusercontent.com/105696893/182520479-a4b29fa6-51ea-4730-bcf3-8bc86ba403a6.png)
+![ER図_SEEK_PARK drawio](https://user-images.githubusercontent.com/105696893/182745298-d534a0e9-a313-4eda-bf32-52c58d8a2357.png)
 
 ## 開発環境
 - OS：Linux(CentOS)
