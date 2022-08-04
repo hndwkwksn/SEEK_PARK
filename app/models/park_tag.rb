@@ -1,0 +1,2 @@
+class ParkTag < ApplicationRecord
+end
