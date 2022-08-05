@@ -32,6 +32,7 @@ Rails.application.routes.draw do
    namespace :admin do
     patch '/end_users/withdraw' => 'end_users#withdraw'
     resources :end_users, only: [:index,:edit,:update]
+    get "search" => "searches#search"
   end
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
