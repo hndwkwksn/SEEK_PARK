@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     patch '/end_users/withdraw' => 'end_users#withdraw'
     resources :end_users, only: [:show,:edit,:update]
     resources :parks, only: [:new,:index,:create,:show,:edit,:update,:destroy] do
+      resources :park_comments, only: [:create, :destroy]
       resource :favorites, only: [:create, :destroy]
     end
   end
