@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   scope module: :end_user do
     root :to =>"homes#top"
+    resources :parks, only: [:new,:index,:create,:show,:edit,:update,:destroy]
   end
 
 
