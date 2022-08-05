@@ -15,6 +15,7 @@ Rails.application.routes.draw do
       resources :park_comments, only: [:create, :destroy]
       resource :favorites, only: [:create, :destroy]
     end
+    get "search" => "searches#search"
   end
 
 
