@@ -11,7 +11,9 @@ Rails.application.routes.draw do
     get '/end_users/unsubscribe' => 'end_users#unsubscribe'
     patch '/end_users/withdraw' => 'end_users#withdraw'
     resources :end_users, only: [:show,:edit,:update]
-    resources :parks, only: [:new,:index,:create,:show,:edit,:update,:destroy]
+    resources :parks, only: [:new,:index,:create,:show,:edit,:update,:destroy] do
+      resource :favorites, only: [:create, :destroy]
+    end
   end
 
 
