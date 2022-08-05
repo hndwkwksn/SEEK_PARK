@@ -10,7 +10,11 @@ Rails.application.routes.draw do
     root :to =>"homes#top"
     get '/end_users/unsubscribe' => 'end_users#unsubscribe'
     patch '/end_users/withdraw' => 'end_users#withdraw'
-    resources :end_users, only: [:show,:edit,:update]
+    resources :end_users, only: [:show,:edit,:update] do
+      resource :relationships, only: [:create, :destroy]
+      get 'followings' => 'relationships#followings', as: 'followings'
+      get 'followers' => 'relationships#followers', as: 'followers'
+    end
     resources :parks, only: [:new,:index,:create,:show,:edit,:update,:destroy] do
       resources :park_comments, only: [:create, :destroy]
       resource :favorites, only: [:create, :destroy]
