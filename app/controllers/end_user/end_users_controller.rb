@@ -1,4 +1,7 @@
 class EndUser::EndUsersController < ApplicationController
+  before_action :authenticate_end_user!
+  before_action :ensure_correct_end_user, only: [:edit, :update]
+
   def show
     @end_user = EndUser.find(params[:id])
   end
@@ -24,5 +27,12 @@ class EndUser::EndUsersController < ApplicationController
 
   def end_user_params
     params.require(:end_user).permit(:name, :introduction, :profile_image)
+  end
+
+  def ensure_correct_end_user
+    @end_user = EndUser.find(params[:id])
+    unless @end_user == current_end_user
+      redirect_to end_user_path(current_end_user)
+    end
   end
 end

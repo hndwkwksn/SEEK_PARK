@@ -6,7 +6,7 @@ class EndUser < ApplicationRecord
 
   has_one_attached :profile_image
 
-  # 画像サイズの変更をする為　※'resize_to_limit'は元の画像より大きくすることは出来ない！
+  # 画像サイズの変更をする為　※'resize_to_limit'は元の画像サイズより大きくすることは出来ない！
   def get_profile_image(width, height)
     unless profile_image.attached?
       file_path = Rails.root.join('app/assets/images/no_image.jpg')
