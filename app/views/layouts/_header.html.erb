@@ -1,6 +1,12 @@
 
 <% if end_user_signed_in? %>
   <li>
+    <%= link_to "マイページ", end_user_path(current_end_user) %>
+  </li>
+  <li>
+    <%= link_to "投稿", new_park_path %>
+  </li>
+  <li>
     <%= link_to "ログアウト", destroy_end_user_session_path, method: :delete %>
   </li>
 <% elsif admin_signed_in? %>
