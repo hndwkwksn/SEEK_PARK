@@ -1,0 +1,20 @@
+<table>
+  <tbody>
+      <% park.park_comments.each do |park_comment| %>
+      <tr>
+        <td>
+          <%= link_to end_user_path(park_comment.end_user) do %>
+            <%= image_tag park_comment.end_user.get_profile_image(100,100) %><br>
+            <%= park_comment.end_user.name %>
+          <% end %>
+        </td>
+        <td><%= park_comment.comment %></td>
+        <td>
+          <% if park_comment.end_user == current_end_user %>
+            <%= link_to "削除", park_park_comment_path(park, park_comment), method: :delete %>
+          <% end %>
+        </td>
+      </tr>
+      <% end %>
+  </tbody>
+</table>

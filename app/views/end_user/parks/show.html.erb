@@ -21,3 +21,11 @@
     <% end %>
  　</tr>
 </table>
+
+<div class="book-comments-index">
+  <%= render "end_user/park_comments/index", park: @park %>
+</div>
+
+<div>
+  <%= render "end_user/park_comments/form", park: @park, park_comment: @park_comment %>
+</div>
