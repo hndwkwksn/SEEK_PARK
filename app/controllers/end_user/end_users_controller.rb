@@ -4,6 +4,7 @@ class EndUser::EndUsersController < ApplicationController
 
   def show
     @end_user = EndUser.find(params[:id])
+    @parks = @end_user.parks
   end
 
   def edit

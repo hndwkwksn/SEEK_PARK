@@ -1,0 +1,25 @@
+<table class='table table-hover table-inverse'>
+  <thead>
+    <tr>
+      <th>ProfileImage</th>
+      <th>ParkImage</th>
+      <th>Name</th>
+      <th>Introduction</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% parks.each do |park| %>
+      <tr>
+        <td>
+          <%= link_to(park.end_user) do %>
+            <%= image_tag park.end_user.get_profile_image(100,100) %>
+          <% end %>
+        </td>
+        <td><%= image_tag park.get_image(100,100) %></td>
+        <td><%= link_to park.name, park %></td>
+        <td><%= park.introduction %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

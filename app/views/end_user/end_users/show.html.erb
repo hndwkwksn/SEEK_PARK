@@ -21,3 +21,7 @@
     <%= link_to "edit", edit_end_user_path(@end_user) %>
   <% end %>
 </div>
+
+<div>
+  <%= render 'end_user/parks/index', parks: @parks %>
+</div>
