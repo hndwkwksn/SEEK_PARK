@@ -30,6 +30,9 @@ https://drive.google.com/file/d/11aziVQ3pyMNp8gJzQOVa-jGVx6sk53AO/view?usp=shari
 - 管理者
 https://drive.google.com/file/d/1bWcC-Envo0Ix-7YIvxiIXRrXkOfvoowA/view?usp=sharing
 ***
+- テーブル定義書
+https://docs.google.com/spreadsheets/d/15Xd75Bvuf1rIhBESRYxvR3TsUM5CwmV9/edit?usp=sharing&ouid=112480481769344298772&rtpof=true&sd=true
+***
 ## ER図
 ![ER図_SEEK_PARK drawio](https://user-images.githubusercontent.com/105696893/182745298-d534a0e9-a313-4eda-bf32-52c58d8a2357.png)
 
