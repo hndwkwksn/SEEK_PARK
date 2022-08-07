@@ -11,13 +11,13 @@ Rails.application.routes.draw do
     get '/end_users/unsubscribe' => 'end_users#unsubscribe'
     patch '/end_users/withdraw' => 'end_users#withdraw'
     resources :end_users, only: [:show,:edit,:update] do
-      resource :relationships, only: [:create, :destroy]
+      resource :relationships, only: [:create, :destroy]  # 単数形にすると、/:idがURLに含まれなくなる。
       get 'followings' => 'relationships#followings', as: 'followings'
       get 'followers' => 'relationships#followers', as: 'followers'
     end
     resources :parks, only: [:new,:index,:create,:show,:edit,:update,:destroy] do
       resources :park_comments, only: [:create, :destroy]
-      resource :favorites, only: [:create, :destroy]
+      resource :favorites, only: [:create, :destroy]  # 単数形にすると、/:idがURLに含まれなくなる。
     end
     get "search" => "searches#search"
   end
