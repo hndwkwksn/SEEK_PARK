@@ -11,6 +11,7 @@
     <td><%= image_tag @park.get_image(100,100) %></td>
     <td><%= link_to @park.name, @park %></td>
     <td><%= @park.introduction %></td>
+    <td><%= render "end_user/favorites/btn", park: @park %></td>
     <% if @park.end_user == current_end_user %>
     <td>
       <%= link_to 'Edit', edit_park_path(@park) %>
