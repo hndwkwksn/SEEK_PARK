@@ -1,0 +1,13 @@
+<% if park.favorited_by?(current_end_user) %>
+  <p>
+    <%= link_to park_favorites_path(park), method: :delete do %>
+      ♥<%= park.favorites.count %> いいね
+    <% end %>
+  </p>
+<% else %>
+  <p>
+    <%= link_to park_favorites_path(park), method: :post do %>
+      ♡<%= park.favorites.count %> いいね
+    <% end %>
+  </p>
+<% end %>
