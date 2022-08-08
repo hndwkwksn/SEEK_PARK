@@ -22,7 +22,8 @@ class EndUser::ParksController < ApplicationController
   end
 
   def index
-    @parks = Park.all
+    @q = Park.ransack(params[:q])
+    @parks = @q.result.includes(:end_user).order(created_at: :desc)
   end
 
   def edit
