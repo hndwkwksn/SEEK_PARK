@@ -7,6 +7,15 @@ class EndUser < ApplicationRecord
   has_many :parks, dependent: :destroy
   has_many :park_comments, dependent: :destroy
   has_many :favorites, dependent: :destroy
+  # 自分がフォローする（与フォロー）側の関係性
+  has_many :relationships, class_name: "Relationship", foreign_key: "follower_id", dependent: :destroy
+  # 自分がフォローされる（被フォロー）側の関係性
+  has_many :reverse_of_relationships, class_name: "Relationship", foreign_key: "followed_id", dependent: :destroy
+  # フォロー一覧画面で使う
+  # 与フォロー関係を通じて参照→自分がフォローしている人
+  has_many :followings, through: :relationships, source: :followed
+  # 被フォロー関係を通じて参照→自分をフォローしている人
+  has_many :followers, through: :reverse_of_relationships, source: :follower
 
   has_one_attached :profile_image
 
@@ -17,5 +26,18 @@ class EndUser < ApplicationRecord
       profile_image.attach(io: File.open(file_path), filename: 'default-image.jpg', content_type: 'image/jpeg')
     end
     profile_image.variant(resize_to_limit: [width, height]).processed
+  end
+
+  # フォローしたときの処理
+  def follow(end_user)
+    relationships.create(followed_id: end_user.id)
+  end
+  # フォローを外すときの処理
+  def unfollow(end_user)
+    relationships.find_by(followed_id: end_user.id).destroy
+  end
+  # フォローしているか判定
+  def following?(end_user)
+    followings.include?(end_user)
   end
 end

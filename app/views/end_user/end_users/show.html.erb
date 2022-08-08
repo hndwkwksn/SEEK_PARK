@@ -14,10 +14,20 @@
 	<th>introduction</th>
 	<th><%= @end_user.introduction %></th>
   </tr>
+  <tr>
+    <th>follows</th>
+    <th><%= link_to end_user.followings.count, end_user_followings_path(end_user) %></th>
+  </tr>
+  <tr>
+    <th>followers</th>
+    <th><%= link_to end_user.followers.count, end_user_followers_path(end_user) %></th>
+  </tr>
 </table>
 
 <div class='row'>
-  <% if current_end_user == @end_user %>
+  <% if current_end_user != @end_user %>
+    <td><%= render "end_user/relationships/btn", end_user: end_user %></td>
+  <% else %>
     <%= link_to "edit", edit_end_user_path(@end_user) %>
   <% end %>
 </div>
