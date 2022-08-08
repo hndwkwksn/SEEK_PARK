@@ -26,7 +26,7 @@
 
 <div class='row'>
   <% if current_end_user != @end_user %>
-    <td><%= render "end_user/relationships/btn", end_user: end_user %></td>
+    <td><%= render "end_user/relationships/btn", end_user: @end_user %></td>
   <% else %>
     <%= link_to "edit", edit_end_user_path(@end_user) %>
   <% end %>
