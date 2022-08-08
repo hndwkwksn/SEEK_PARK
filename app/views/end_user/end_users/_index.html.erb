@@ -12,10 +12,12 @@
         <td><%= image_tag end_user.get_profile_image(100,100) %></td>
         <td><%= end_user.name %></td>
         <td>
-          <% if current_end_user.following?(end_user) %>
-            <td><%= link_to "フォロー外す", end_user_relationships_path(end_user.id), method: :delete %></td>
-          <% else %>
-            <td><%= link_to "フォローする", end_user_relationships_path(end_user.id), method: :post %></td>
+          <% if current_end_user != end_user %>
+            <% if current_end_user.following?(end_user) %>
+              <td><%= link_to "フォロー外す", end_user_relationships_path(end_user.id), method: :delete %></td>
+            <% else %>
+              <td><%= link_to "フォローする", end_user_relationships_path(end_user.id), method: :post %></td>
+            <% end %>
           <% end %>
         </td>
         <td><%= link_to 'Show', end_user %></td>
