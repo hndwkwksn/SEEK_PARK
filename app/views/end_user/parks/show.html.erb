@@ -9,7 +9,7 @@
       <% end %>
     </td>
     <td><%= image_tag @park.get_image(100,100) %></td>
-    <td><%= link_to @park.name, @park %></td>
+    <td><%= @park.name %></td>
     <td><%= @park.introduction %></td>
     <td>
       <% @park.tags.each do |tag| %>
