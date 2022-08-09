@@ -5,6 +5,7 @@
       <th>ParkImage</th>
       <th>Name</th>
       <th>Introduction</th>
+      <th>Tag</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -20,6 +21,11 @@
         <td><%= image_tag park.get_image(100,100) %></td>
         <td><%= link_to park.name, park %></td>
         <td><%= park.introduction %></td>
+        <td>
+          <% park.tags.each do |tag| %>
+            <%= tag.name %>
+          <% end %>
+        </td>
       </tr>
     <% end %>
   </tbody>
