@@ -30,8 +30,8 @@ class EndUser::SessionsController < Devise::SessionsController
     # ログイン時に入力されたemailに対応するユーザーが存在するか探す。
     @end_user = EndUser.find_by(email: params[:end_user][:email])
     if @end_user
-      # 入力されたパスワードが正しいことを確認。
-      if @end_user.valid_password?(params[:end_user][:password]) && !@end_user.is_deleted
+      # 入力されたパスワードが正しいことを確認。is_deletedがtrue or falseか確認。
+      if @end_user.valid_password?(params[:end_user][:password]) && @end_user.is_deleted
         flash[:danger] = 'お客様は退会済みです。申し訳ございませんが、別のメールアドレスをお使いください。'
         redirect_to new_end_user_session_path
       end

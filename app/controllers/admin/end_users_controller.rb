@@ -13,5 +13,6 @@ class Admin::EndUsersController < ApplicationController
     # is_deletedカラムをtrueに変更することにより削除フラグを立てる
     @end_user.update(is_deleted: true)
     reset_session
+    redirect_to admin_end_users_path
   end
 end

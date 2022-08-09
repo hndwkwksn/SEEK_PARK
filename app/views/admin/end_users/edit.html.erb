@@ -17,8 +17,7 @@
   <tr>
     <th></th>
     <th>
-      <%= link_to "アカウント停止", admin_end_users_withdraw_path, method: :patch, data: { confilm: "本当に停止しますか？" } %>
+      <%= link_to "アカウント停止", admin_withdraw_path(id: @end_user.id), method: :patch, data: { confilm: "本当に停止しますか？" } %>
     </th>
   </tr>
 </table>
-
