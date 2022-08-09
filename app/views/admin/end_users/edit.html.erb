@@ -1,2 +1,24 @@
 <h1>Admin::EndUsers#edit</h1>
-<p>Find me in app/views/admin/end_users/edit.html.erb</p>
+
+<table class='table'>
+  <tr>
+    <th>
+      <%= image_tag @end_user.get_profile_image(100,100) %>
+    </th>
+  </tr>
+  <tr>
+	<th>name</th>
+	<th><%= @end_user.name %></th>
+  </tr>
+  <tr>
+	<th>introduction</th>
+	<th><%= @end_user.introduction %></th>
+  </tr>
+  <tr>
+    <th></th>
+    <th>
+      <%= link_to "アカウント停止", admin_end_users_withdraw_path, method: :patch, data: { confilm: "本当に停止しますか？" } %>
+    </th>
+  </tr>
+</table>
+
