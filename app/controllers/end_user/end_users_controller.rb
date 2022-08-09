@@ -18,6 +18,12 @@ class EndUser::EndUsersController < ApplicationController
     end
   end
 
+  def favorites
+    @end_user = EndUser.find(params[:id])
+    favorites = Favorite.where(end_user_id: @end_user.id).pluck(:park_id)
+    @favorite_parks = Park.find(favorites)
+  end
+
   def unsubscribe
   end
 

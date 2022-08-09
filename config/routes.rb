@@ -11,6 +11,9 @@ Rails.application.routes.draw do
     get '/end_users/unsubscribe' => 'end_users#unsubscribe'
     patch '/end_users/withdraw' => 'end_users#withdraw'
     resources :end_users, only: [:show,:edit,:update] do
+      member do  # member doを使うと、ユーザーidが含まれてるurlを使える様になる。
+        get :favorites
+      end
       resource :relationships, only: [:create, :destroy]  # 単数形にすると、/:idがURLに含まれなくなる。
       get 'followings' => 'relationships#followings', as: 'followings'
       get 'followers' => 'relationships#followers', as: 'followers'
