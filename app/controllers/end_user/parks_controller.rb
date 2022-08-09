@@ -25,7 +25,7 @@ class EndUser::ParksController < ApplicationController
 
   def index
     @q = Park.ransack(params[:q])
-    @parks = @q.result.includes(:end_user).order(created_at: :desc)
+    @parks = @q.result(distinct: true).includes(:end_user).order(created_at: :desc)
   end
 
   def edit
