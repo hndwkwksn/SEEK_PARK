@@ -9,7 +9,9 @@ class EndUser::ParksController < ApplicationController
   def create
     @park = Park.new(park_params)
     @park.end_user_id = current_end_user.id
+    tag_list = params[:park][:tag_name].split(',')
     if @park.save
+      @park.save_tags(tag_list)
       redirect_to park_path(@park), notice: "You have created park successfully."
     else
       render 'new'
