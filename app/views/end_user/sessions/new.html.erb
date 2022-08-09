@@ -1,5 +1,9 @@
 <h2>Log in</h2>
 
+<% if flash[:danger] %>
+  <p class="text-red"><%= flash[:danger] %></p>
+<% end %>
+
 <%= form_with model: @end_user, url: session_path(resource_name), local: true do |f| %>
   <div class="field">
     <%= f.label :email %><br />
