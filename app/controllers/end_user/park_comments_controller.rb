@@ -1,15 +1,14 @@
 class EndUser::ParkCommentsController < ApplicationController
   def create
     park = Park.find(params[:park_id])
-    comment = current_end_user.park_comments.new(park_comment_params)
-    comment.park_id = park.id
-    comment.save
-    redirect_to park_path(park)
+    @comment = current_end_user.park_comments.new(park_comment_params)
+    @comment.park_id = park.id
+    @comment.save
   end
 
   def destroy
-    ParkComment.find(params[:id]).destroy
-    redirect_to park_path(params[:park_id])
+    @comment = ParkComment.find(params[:id])
+    @comment.destroy
   end
 
   private

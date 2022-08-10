@@ -11,7 +11,7 @@
         <td><%= park_comment.comment %></td>
         <td>
           <% if park_comment.end_user == current_end_user %>
-            <%= link_to "削除", park_park_comment_path(park, park_comment), method: :delete %>
+            <%= link_to "削除", park_park_comment_path(park, park_comment), method: :delete, remote: true %>
           <% end %>
         </td>
       </tr>
