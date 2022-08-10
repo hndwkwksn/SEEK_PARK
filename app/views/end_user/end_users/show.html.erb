@@ -29,7 +29,9 @@
   <% if current_end_user != @end_user %>
     <td><%= render "end_user/relationships/btn", end_user: @end_user %></td>
   <% else %>
-    <%= link_to "edit", edit_end_user_path(@end_user) %>
+    <% if @end_user.name != "guestuser" %>
+      <%= link_to "edit", edit_end_user_path(@end_user) %>
+    <% end %>
   <% end %>
 </div>
 

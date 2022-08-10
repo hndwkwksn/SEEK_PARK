@@ -40,4 +40,13 @@ class EndUser < ApplicationRecord
   def following?(end_user)
     followings.include?(end_user)
   end
+
+  # ゲストログイン機能
+  def self.guest
+    # find_or_create_byは、データの検索と作成を自動的に判断して処理を行うメソッド。「!」を付与することで、処理がうまくいかなかった場合にエラーが発生するようになり、不具合を検知しやすくなります。
+    find_or_create_by!(name: 'guestuser' ,email: 'guest@example.com') do |end_user|
+      end_user.password = SecureRandom.urlsafe_base64  #ランダムな文字列を生成するRubyのメソッド
+      end_user.name = "guestuser"
+    end
+  end
 end

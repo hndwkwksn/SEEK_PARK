@@ -22,6 +22,9 @@ Rails.application.routes.draw do
       resources :park_comments, only: [:create, :destroy]
       resource :favorites, only: [:create, :destroy]  # 単数形にすると、/:idがURLに含まれなくなる。
     end
+    devise_scope :end_user do
+      post 'end_users/guest_sign_in', to: 'end_users/sessions#guest_sign_in'
+    end
   end
 
 
