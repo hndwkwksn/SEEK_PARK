@@ -60,3 +60,5 @@ gem 'devise'
 gem 'ransack'
 
 gem 'jquery-rails'
+
+gem 'dotenv-rails'
