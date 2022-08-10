@@ -1,13 +1,13 @@
 <% if user_signed_in? %>
   <% if park.favorited_by?(current_end_user) %>
     <p>
-      <%= link_to park_favorites_path(park), method: :delete do %>
+      <%= link_to park_favorites_path(park), method: :delete, remote: true do %> <!--非同期通信の為,' remote: true'追加-->
         ♥<%= park.favorites.count %> いいね
       <% end %>
     </p>
   <% else %>
     <p>
-      <%= link_to park_favorites_path(park), method: :post do %>
+      <%= link_to park_favorites_path(park), method: :post, remote: true do %> <!--非同期通信の為, 'remote: true'追加-->
         ♡<%= park.favorites.count %> いいね
       <% end %>
     </p>
