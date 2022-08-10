@@ -1,4 +1,4 @@
-<% if user_signed_in? %>
+<% if end_user_signed_in? %>
   <% if park.favorited_by?(current_end_user) %>
     <p>
       <%= link_to park_favorites_path(park), method: :delete, remote: true do %> <!--非同期通信の為,' remote: true'追加-->
