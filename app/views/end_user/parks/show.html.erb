@@ -1,39 +1,46 @@
-<h1>Parks#show</h1>
+<div class="container">
+  <div class="row">
+    <h1>Parks#show</h1>
 
-<table class='table'>
-  <tr>
-    <td>
-      <%= link_to(@park.end_user) do %>
-        <%= image_tag @park.end_user.get_profile_image(100,100) %><br>
-        <%= @park.end_user.name %>
-      <% end %>
-    </td>
-    <td><%= image_tag @park.get_image(100,100) %></td>
-    <td><%= @park.name %></td>
-    <td><%= @park.introduction %></td>
-    <td>
-      <% @park.tags.each do |tag| %>
-        <%= tag.name %>
-      <% end %>
-    </td>
-    <td id="favorite_buttons_<%= @park.id %>">
-      <%= render "end_user/favorites/btn", park: @park %>
-    </td>
-    <% if @park.end_user == current_end_user %>
-    <td>
-      <%= link_to 'Edit', edit_park_path(@park) %>
-    </td>
-    <td>
-      <%= link_to 'Destroy', @park, method: :delete, data: { confirm: '本当に削除しますか？' } %>
-    </td>
-    <% end %>
- 　</tr>
-</table>
+    <table class='table'>
+      <tr>
+        <td>
+          <%= link_to(@park.end_user) do %>
+            <%= image_tag @park.end_user.get_profile_image(100,100) %><br>
+            <%= @park.end_user.name %>
+          <% end %>
+        </td>
+        <td><%= image_tag @park.get_image(100,100) %></td>
+        <td><%= @park.name %></td>
+        <td><%= @park.introduction %></td>
+        <td>
+          <% @park.tags.each do |tag| %>
+            <%= tag.name %>
+          <% end %>
+        </td>
+        <td id="favorite_buttons_<%= @park.id %>">
+          <%= render "end_user/favorites/btn", park: @park %>
+        </td>
+        <% if @park.end_user == current_end_user %>
+        <td>
+          <%= link_to 'Edit', edit_park_path(@park) %>
+        </td>
+        <td>
+          <%= link_to 'Destroy', @park, method: :delete, data: { confirm: '本当に削除しますか？' } %>
+        </td>
+        <% end %>
+     　</tr>
+    </table>
+  </div>
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="park-comments-index">
+        <%= render "end_user/park_comments/index", park: @park %>
+      </div>
+    </div>
 
-<div class="park-comments-index">
-  <%= render "end_user/park_comments/index", park: @park %>
-</div>
-
-<div>
-  <%= render "end_user/park_comments/form", park: @park, park_comment: @park_comment %>
+    <div class="col-lg-12">
+      <%= render "end_user/park_comments/form", park: @park, park_comment: @park_comment %>
+    </div>
+  </div>
 </div>

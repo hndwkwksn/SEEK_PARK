@@ -1,21 +1,25 @@
-<h2>お気に入り</h2>
-<table>
-<% @favorite_parks.each do |park|%>
-  <tr>
-    <th>
-    <%= link_to(park.end_user) do %>
-      <%= image_tag park.end_user.get_profile_image(100,100) %></br>
-      <%= park.end_user.name %>
+<div class="container">
+  <div class="row">
+    <h2>お気に入り</h2>
+    <table>
+    <% @favorite_parks.each do |park|%>
+      <tr>
+        <th>
+        <%= link_to(park.end_user) do %>
+          <%= image_tag park.end_user.get_profile_image(100,100) %></br>
+          <%= park.end_user.name %>
+        <% end %>
+        </th>
+        <th><%= image_tag park.get_image(100,100) %></th>
+        <th><%= link_to park.name, park %></th>
+        <th><%= park.introduction %></th>
+        <th>
+        <% park.tags.each do |tag| %>
+          <%= tag.name %>
+        <% end %>
+        </th>
+      </tr>
     <% end %>
-    </th>
-    <th><%= image_tag park.get_image(100,100) %></th>
-    <th><%= link_to park.name, park %></th>
-    <th><%= park.introduction %></th>
-    <th>
-    <% park.tags.each do |tag| %>
-      <%= tag.name %>
-    <% end %>
-    </th>
-  </tr>
-<% end %>
-</table>
+    </table>
+  </div>
+</div>

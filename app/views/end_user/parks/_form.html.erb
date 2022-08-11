@@ -1,22 +1,22 @@
 <%= form_with model: park, local:true do |f| %>
   <div class="form-group">
-    <%= f.label :image %>
+    <%= f.label :image, class: "mb-0" %><br />
     <%= f.file_field :image, accept: "image/*" %>
   </div>
   <div class="form-group">
-    <%= f.label :name %>
+    <%= f.label :name, class: "mb-0" %><br />
     <%= f.text_field :name %>
   </div>
   <div class="form-group">
-    <%= f.label :introduction %>
+    <%= f.label :introduction, class: "mb-0" %><br />
     <%= f.text_area :introduction %>
   </div>
   <div class="form-group">
-    <%= f.label :address %>
+    <%= f.label :address, class: "mb-0" %><br />
     <%= f.text_field :address %>
   </div>
   <div class="form-group">
-    <%= f.label :tag %>
+    <%= f.label :tag, class: "mb-0" %><br />
     <%= f.text_field :tag_name %>
   </div>
   <div id="map" >
