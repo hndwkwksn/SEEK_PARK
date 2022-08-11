@@ -13,9 +13,11 @@
 
   <body>
     <p id="notice"><%= notice %></p>
-    <header>
+    <div class="container a-p">
       <%= render 'layouts/header' %>
-    </header>
-    <%= yield %>
+    <main>
+      <%= yield %>
+    </main>
+    </div>
   </body>
 </html>
