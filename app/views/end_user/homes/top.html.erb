@@ -1,17 +1,17 @@
 <div class="container">
   <div class="row">
-    <div class='mx-auto'>
+    <div class='mx-auto mt-5'>
       <h1>SEEK_PARK</h1>
       <p>ようこそ！</p>
 
-      <div class="btn-wrapper mx-auto">
-        <div class="devise-item">
+      <div class="btn-wrapper mx-auto mt-5">
+        <div class="devise-item m-3">
           <%= link_to 'ゲストログイン（閲覧用）', end_users_guest_sign_in_path, method: :post %>
         </div>
-        <div class="devise-item">
+        <div class="devise-item m-3">
           <%= link_to 'ログイン',new_end_user_session_path %>
         </div>
-        <div class="devise-item">
+        <div class="devise-item m-3">
           <%= link_to '新規登録',new_end_user_registration_path %>
         </div>
       </div>
