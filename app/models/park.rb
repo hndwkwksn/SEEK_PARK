@@ -7,6 +7,11 @@ class Park < ApplicationRecord
 
   has_one_attached :image
 
+  # 入力した住所から緯度経度を保存
+  geocoded_by :address
+  # 後に住所変更があっても、変更後の緯度経度を保存してくれる
+  after_validation :geocode, if: :address_changed?
+
   validates :name,presence:true,length:{maximum:50}
   validates :introduction,length:{maximum:200}
   validates :address,presence:true,length:{maximum:100}
