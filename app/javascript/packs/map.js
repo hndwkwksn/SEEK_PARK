@@ -28,7 +28,7 @@
             position: results[0].geometry.location
         });
       } else {
-        alert('該当する結果がありませんでした：' + status);
+        // alert('該当する結果がありませんでした：' + status);
       }
     });
   }

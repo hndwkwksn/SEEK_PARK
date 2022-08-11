@@ -12,57 +12,17 @@
     <%= f.text_area :introduction %>
   </div>
   <div class="form-group">
-    <%= f.label :address, class: "mb-0" %><br />
-    <%= f.text_field :address %>
-  </div>
-  <div class="form-group">
     <%= f.label :tag, class: "mb-0" %><br />
     <%= f.text_field :tag_name %>
   </div>
   <div class="form-group">
-    <%= f.submit class: 'btn btn-success' %>
+    <%= f.label :address, class: "mb-0" %><br />
+    <%= f.text_field :address, id:"address" %>
+  </div>
+  <input type="button" value="住所を検索" onclick="codeAddress()">
+  <div id="map">
+  </div>
+  <div class="form-group">
+    <%= f.submit class: 'btn btn-success mt-3' %>
   </div>
 <% end %>
-
-<div id="map">
-  </div>
-
-  <input id="address" type="textbox" value="GeekSalon">
-  <input type="button" value="Encode" onclick="codeAddress()">
-
-  <!--<script>-->
-  <!--let map-->
-
-  <!--function initMap(){-->
-  <!--  geocoder = new google.maps.Geocoder()-->
-
-  <!--  map = new google.maps.Map(document.getElementById('map'), {-->
-  <!--    center: {lat: 40.7828, lng:-73.9653},-->
-  <!--    zoom: 12,-->
-  <!--  });-->
-
-  <!--  marker = new google.maps.Marker({-->
-  <!--    position:  {lat: 40.7828, lng:-73.9653},-->
-  <!--    map: map-->
-  <!--  });-->
-  <!--}-->
-
-  <!--let geocoder-->
-
-  <!--function codeAddress(){-->
-  <!--  let inputAddress = document.getElementById('address').value;-->
-
-  <!--  geocoder.geocode( { 'address': inputAddress}, function(results, status) {-->
-  <!--    if (status == 'OK') {-->
-  <!--      map.setCenter(results[0].geometry.location);-->
-  <!--      var marker = new google.maps.Marker({-->
-  <!--          map: map,-->
-  <!--          position: results[0].geometry.location-->
-  <!--      });-->
-  <!--    } else {-->
-  <!--      alert('該当する結果がありませんでした：' + status);-->
-  <!--    }-->
-  <!--  });-->
-  <!--}-->
-  <!--</script>-->
-
