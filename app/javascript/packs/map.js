@@ -1,6 +1,7 @@
-// map表示機能
 let map
+let geocoder
 
+// map表示機能
 function initMap(){
   geocoder = new google.maps.Geocoder()
   if(document.getElementById('map')){
@@ -13,22 +14,20 @@ function initMap(){
       position:  {lat: 35.690921, lng:139.700257},
       map: map
     });
-  // }else{
-  //   map = new google.maps.Map(document.getElementById('show-map'), {
-  //     center: {lat: <%= @lat %>.lat, lng: gon.lng},
-  //     zoom: 12,
-  //   });
+   }else{
+     map = new google.maps.Map(document.getElementById('show-map'), {
+       center: {lat: gon.park.latitude, lng: gon.park.longitude},
+       zoom: 12,
+     });
 
-  //   marker = new google.maps.Marker({
-  //     position:  {lat: gon.lat, lng: gon.lng},
-  //     map: map
-  //   });
+     marker = new google.maps.Marker({
+       position:  {lat: gon.park.latitude, lng: gon.park.longitude},
+       map: map
+     });
    }
 }
 
 // map検索機能
-let geocoder
-
 function codeAddress(){
   let inputAddress = document.getElementById('address').value;
 
@@ -46,7 +45,5 @@ function codeAddress(){
 }
 
 // ブラウザにinitMapを定義
-window.onload = function() {
-    initMap()
-}
+window.addEventListener("load", initMap);
 window.addEventListener("click", codeAddress);
