@@ -1,45 +1,42 @@
-<div class="container">
-  <div class="row">
-    <div class='col-md-3'>
-      <h1>EndUsers#show</h1>
-      <div class='m-5'>
-        <div class="row">
-          <div>
-            <%= image_tag @end_user.get_profile_image(100,100) %>
-          </div>
-        </div>
-        <div class="row">
-        	<div>name</div>
-        	<div><%= @end_user.name %></div>
-        </div>
-        <div class="row">
-        	<div>introduction</div>
-        	<div><%= @end_user.introduction %></div>
-        </div>
-        <div class="row">
-          <div>フォロー中</div>
-          <div><%= link_to @end_user.followings.count, end_user_followings_path(@end_user) %></div>
-        </div>
-        <div class="row">
-          <div>フォロワー</div>
-          <div><%= link_to @end_user.followers.count, end_user_followers_path(@end_user) %></div>
-        </div>
-        <div class="row"><%=link_to"お気に入り記事",favorites_end_user_path(@end_user) %></div>
+<div class="card-list-container">
+  <div class="card w-50 mx-auto mt-1 shadow-lg">
+
+    <h2 class="mt-3 ml-3">プロフィール</h2>
+    <div class='m-5'>
+      <div class="row">
         <div>
-            <% if current_end_user != @end_user %>
-              <div><%= render "end_user/relationships/btn", end_user: @end_user %></div>
-            <% else %>
-              <% if @end_user.name != "guestuser" %>
-                <%= link_to "edit", edit_end_user_path(@end_user) %>
-              <% end %>
-            <% end %>
-          </div>
+          <%= image_tag @end_user.get_profile_image(100,100) %>
+        </div>
+      </div>
+      <div class="row">
+      	<div>name</div>
+      	<div><%= @end_user.name %></div>
+      </div>
+      <div class="row">
+      	<div>introduction</div>
+      	<div><%= @end_user.introduction %></div>
+      </div>
+      <div class="row">
+        <div>フォロー中</div>
+        <div><%= link_to @end_user.followings.count, end_user_followings_path(@end_user) %></div>
+      </div>
+      <div class="row">
+        <div>フォロワー</div>
+        <div><%= link_to @end_user.followers.count, end_user_followers_path(@end_user) %></div>
+      </div>
+      <div class="row"><%=link_to"お気に入り記事",favorites_end_user_path(@end_user) %></div>
+      <div>
+        <% if current_end_user != @end_user %>
+          <div><%= render "end_user/relationships/btn", end_user: @end_user %></div>
+        <% else %>
+          <% if @end_user.name != "guestuser" %>
+            <%= link_to "edit", edit_end_user_path(@end_user) %>
+          <% end %>
+        <% end %>
       </div>
     </div>
 
-    <div class='col-md-8 offset-md-1'>
-      <h1>投稿履歴</h1>
-      <%= render 'end_user/parks/index', parks: @parks %>
-    </div>
   </div>
 </div>
+
+<%= render 'end_user/parks/index', parks: @parks %>

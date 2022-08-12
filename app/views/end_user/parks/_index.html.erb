@@ -1,30 +1,33 @@
-<% parks.each do |park| %>
-<div class="card w-50 mx-auto mt-1 shadow-lg">
+<div class="card-list-container">
+  <% parks.each do |park| %>
+  <article class="card w-50 mx-auto mt-1 shadow-lg">
 
-  <%= image_tag park.get_image(500,500), class:"card-img-top"; %>
+    <%= image_tag park.get_image(500,500), class:"card-img-top"; %>
 
-  <div class="card-body">
-    <div class="row">
+    <div class="card-body">
+      <div class="row">
 
-      <div class="col-2">
-        <%= link_to(park.end_user) do %>
-          <%= image_tag park.end_user.get_profile_image(100,100) %></br>
-          <%= park.end_user.name %>
-        <% end %>
-      </div>
-
-      <div class="col-10">
-        <p><%= link_to park.name, park %></p>
-        <p><%= park.address %></p>
-        <p><%= park.introduction %></p>
-        <p>
-          <% park.tags.each do |tag| %>
-            <%= tag.name %>
+        <div class="col-2">
+          <%= link_to(park.end_user) do %>
+            <%= image_tag park.end_user.get_profile_image(100,100) %></br>
+            <%= park.end_user.name %>
           <% end %>
-        </p>
-      </div>
+        </div>
 
+        <div class="col-10">
+          <p><%= link_to park.name, park %></p>
+          <p><%= park.address %></p>
+          <p><%= park.introduction %></p>
+          <p>
+            <% park.tags.each do |tag| %>
+              <%= tag.name %>
+            <% end %>
+          </p>
+        </div>
+
+      </div>
     </div>
-  </div>
+
+  </article>
+  <% end %>
 </div>
-<% end %>
