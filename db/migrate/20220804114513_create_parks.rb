@@ -5,8 +5,8 @@ class CreateParks < ActiveRecord::Migration[6.1]
       t.string :name, null: false, default: ""
       t.text :introduction, null: false, default: ""
       t.text :address, null: false, default: ""
-      t.float :latitude, null: false, default: ""
-      t.float :longitude, null: false, default: ""
+      t.float :latitude
+      t.float :longitude
 
       t.timestamps
     end
