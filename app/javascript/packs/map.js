@@ -13,17 +13,17 @@ function initMap(){
       position:  {lat: 35.690921, lng:139.700257},
       map: map
     });
-  }else{
-    map = new google.maps.Map(document.getElementById('show-map'), {
-      center: {lat: <%= @lat %>.lat, lng: gon.lng},
-      zoom: 12,
-    });
+  // }else{
+  //   map = new google.maps.Map(document.getElementById('show-map'), {
+  //     center: {lat: <%= @lat %>.lat, lng: gon.lng},
+  //     zoom: 12,
+  //   });
 
-    marker = new google.maps.Marker({
-      position:  {lat: gon.lat, lng: gon.lng},
-      map: map
-    });
-  }
+  //   marker = new google.maps.Marker({
+  //     position:  {lat: gon.lat, lng: gon.lng},
+  //     map: map
+  //   });
+   }
 }
 
 // map検索機能

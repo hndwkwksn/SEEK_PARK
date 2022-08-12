@@ -20,9 +20,8 @@ class EndUser::ParksController < ApplicationController
 
   def show
     @park = Park.find(params[:id])
-    @lat = @park.latitude
-    @lng = @park.longitude
     @park_comment = ParkComment.new
+    gon.park = @park
   end
 
   def index
