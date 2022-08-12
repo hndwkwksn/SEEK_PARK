@@ -1,16 +1,13 @@
 <div class="container">
   <div class="row">
-    <h1>みんなの投稿</h1>
-    <div class="ml-auto">
-      <%= search_form_for @q, url: parks_path do |f| %>
-        <div class="input-group mb-3">
-          <%= f.search_field :end_user_name_or_name_or_address_or_tags_name_cont, placeholder: 'キーワード検索' %>
-          <div class="input-group-append">
-            <%= f.submit class: 'btn btn-primary' %>
-          </div>
-        </div>
-      <% end %>
+    <div class="col-8 mt-3">
+      <h1>みんなの投稿</h1>
     </div>
-    <%= render 'index', parks: @parks %>
+    <div class="col-4 mt-3">
+      <%= render 'search_form', parks: @q %>
+    </div>
   </div>
+</div>
+<div class="card-list-container">
+  <%= render 'index', parks: @parks %>
 </div>
