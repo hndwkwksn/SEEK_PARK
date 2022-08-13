@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
     when Admin then
       admin_end_users_path
     when EndUser then
-      end_user_path(@end_user)
+      end_user_path(resource)
     end
   end
 

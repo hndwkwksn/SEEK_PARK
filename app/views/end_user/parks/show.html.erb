@@ -22,18 +22,17 @@
               <%= tag.name %>
             <% end %>
           </p>
-          <p class="card-title" id="show-map">
-          </p>
-          <p class="card-title" id="favorite_buttons_<%= @park.id %>">
+          <div class="card-title" id="show-map"></div>
+          <div class="card-title" id="favorite_buttons_<%= @park.id %>">
             <%= render "end_user/favorites/btn", park: @park %>
-          </p>
+          </div>
           <% if @park.end_user == current_end_user %>
-          <p>
+          <div>
             <%= link_to 'Edit', edit_park_path(@park) %>
-          </p>
-          <p>
+          </div>
+          <div>
             <%= link_to 'Destroy', @park, method: :delete, data: { confirm: '本当に削除しますか？' } %>
-          </p>
+          </div>
           <% end %>
         </div>
 

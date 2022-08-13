@@ -18,7 +18,7 @@
             <%= link_to "マイページ", end_user_path(current_end_user), class: "text-light" %>
           </li>
           <li class="nav-item mx-3">
-            <%= link_to "投稿", new_park_path, class: "text-light" %>
+            <%= link_to "投稿", new_park_path, class: "text-light", data: {"turbolinks" => false} %>
           </li>
           <li class="nav-item mx-3">
             <%= link_to "ログアウト", destroy_end_user_session_path, method: :delete, class: "text-light" %>
