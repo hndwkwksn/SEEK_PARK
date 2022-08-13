@@ -1,48 +1,58 @@
-<div class="container pt-5">
-  <div class="row">
+<div class="post-detail py-3 bg-light">
+  <div class="card w-50 mx-auto shadow-lg">
     <h1>Parks#show</h1>
 
-    <table class='table'>
-      <tr>
-        <td>
+    <%= image_tag @park.get_image(500,500), class:"card-img-top" %>
+
+    <div class='card-body'>
+      <div class="row">
+
+        <div class="col-2">
           <%= link_to(@park.end_user) do %>
-            <%= image_tag @park.end_user.get_profile_image(100,100) %><br>
-            <%= @park.end_user.name %>
+            <%= image_tag @park.end_user.get_profile_image(100,100), class:"mt-1 rounded-circle" %><br>
           <% end %>
-        </td>
-        <td><%= image_tag @park.get_image(100,100) %></td>
-        <td><%= @park.name %></td>
-        <td><%= @park.introduction %></td>
-        <td>
-          <% @park.tags.each do |tag| %>
-            <%= tag.name %>
+        </div>
+
+        <div class="col-10">
+          <p class="card-title"><%= @park.end_user.name %></p>
+          <p class="card-title"><%= @park.name %></p>
+          <p class="card-title"><%= @park.introduction %></p>
+          <p class="card-title">
+            <% @park.tags.each do |tag| %>
+              <%= tag.name %>
+            <% end %>
+          </p>
+          <p class="card-title" id="show-map">
+          </p>
+          <p class="card-title" id="favorite_buttons_<%= @park.id %>">
+            <%= render "end_user/favorites/btn", park: @park %>
+          </p>
+          <% if @park.end_user == current_end_user %>
+          <p>
+            <%= link_to 'Edit', edit_park_path(@park) %>
+          </p>
+          <p>
+            <%= link_to 'Destroy', @park, method: :delete, data: { confirm: '本当に削除しますか？' } %>
+          </p>
           <% end %>
-        </td>
-        <td id="show-map">
-        </td>
-        <td id="favorite_buttons_<%= @park.id %>">
-          <%= render "end_user/favorites/btn", park: @park %>
-        </td>
-        <% if @park.end_user == current_end_user %>
-        <td>
-          <%= link_to 'Edit', edit_park_path(@park) %>
-        </td>
-        <td>
-          <%= link_to 'Destroy', @park, method: :delete, data: { confirm: '本当に削除しますか？' } %>
-        </td>
-        <% end %>
-     　</tr>
-    </table>
-  </div>
-  <div class="row">
-    <div class="col-lg-12">
-      <div class="park-comments-index">
-        <%= render "end_user/park_comments/index", park: @park %>
+        </div>
+
       </div>
+
+      <hr>
+
+      <div class="comments card-text">
+        <h4>件のコメント</h4>
+        <div class="park-comments-index">
+          <%= render "end_user/park_comments/index", park: @park %>
+        </div>
+      </div>
+
+      <div class="new-comments card-text">
+        <%= render "end_user/park_comments/form", park: @park, park_comment: @park_comment %>
+      </div>
+
     </div>
 
-    <div class="col-lg-12">
-      <%= render "end_user/park_comments/form", park: @park, park_comment: @park_comment %>
-    </div>
   </div>
 </div>
