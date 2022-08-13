@@ -4,12 +4,14 @@ class EndUser::FavoritesController < ApplicationController
   def create
     favorite = current_end_user.favorites.new(park_id: @park.id)
     favorite.save
+    # redirect_to request.referer
     render 'replace_btn'
   end
 
   def destroy
     favorite = current_end_user.favorites.find_by(park_id: @park.id)
     favorite.destroy
+    # redirect_to request.referer
     render 'replace_btn'
   end
 

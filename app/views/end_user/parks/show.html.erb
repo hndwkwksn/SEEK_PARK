@@ -1,8 +1,9 @@
 <div class="post-detail py-3 bg-light">
+  <h1>Parks#show</h1>
   <div class="card w-50 mx-auto shadow-lg">
-    <h1>Parks#show</h1>
 
-    <%= image_tag @park.get_image(500,500), class:"card-img-top" %>
+    <h4 class="m-2"><%= @park.name %></h4>
+    <%= image_tag @park.get_image(500,500) %>
 
     <div class='card-body'>
       <div class="row">
@@ -15,7 +16,6 @@
 
         <div class="col-10">
           <p class="card-title"><%= @park.end_user.name %></p>
-          <p class="card-title"><%= @park.name %></p>
           <p class="card-title"><%= @park.introduction %></p>
           <p class="card-title">
             <% @park.tags.each do |tag| %>
