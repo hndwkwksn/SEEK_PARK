@@ -28,7 +28,7 @@
           </div>
           <% if @park.end_user == current_end_user %>
           <div>
-            <%= link_to 'Edit', edit_park_path(@park) %>
+            <%= link_to 'Edit', edit_park_path(@park), data: {"turbolinks" => false} %>
           </div>
           <div>
             <%= link_to 'Destroy', @park, method: :delete, data: { confirm: '本当に削除しますか？' } %>

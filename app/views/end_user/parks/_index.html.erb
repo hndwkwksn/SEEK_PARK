@@ -2,7 +2,7 @@
   <% parks.each do |park| %>
   <article class="card w-50 mx-auto mt-1 shadow-lg">
 
-    <%= link_to park.name, park, class: "m-2", data: {"turbolinks" => false} %>
+    <h4 class="m-3"><%= link_to park.name, park, data: {"turbolinks" => false} %></h4>
     <%= image_tag park.get_image(500,500), class:"card-img-top"; %>
 
     <div class="card-body">

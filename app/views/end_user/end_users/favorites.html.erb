@@ -4,7 +4,7 @@
   <% @favorite_parks.each do |park|%>
   <div class="card w-50 mx-auto mt-1 shadow-lg">
 
-    <%= link_to park.name, park, class: "m-2" %>
+    <%= link_to park.name, park, class: "m-2", data: {"turbolinks" => false} %>
     <%= image_tag park.get_image(500,500) %>
 
     <div class="card-body">

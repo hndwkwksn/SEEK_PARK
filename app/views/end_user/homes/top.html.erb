@@ -5,15 +5,19 @@
       <p>ようこそ！</p>
 
       <div class="btn-wrapper mx-auto mt-5">
-        <div class="devise-item m-3">
-          <%= link_to 'ゲストログイン（閲覧用）', end_users_guest_sign_in_path, method: :post %>
-        </div>
-        <div class="devise-item m-3">
-          <%= link_to 'ログイン',new_end_user_session_path %>
-        </div>
-        <div class="devise-item m-3">
-          <%= link_to '新規登録',new_end_user_registration_path %>
-        </div>
+        <% if end_user_signed_in? %>
+          <%= link_to "ログアウト", destroy_end_user_session_path, method: :delete, class: "text-red" %>
+        <% else %>
+          <div class="devise-item m-3">
+            <%= link_to 'ゲストログイン（閲覧用）', end_users_guest_sign_in_path, method: :post %>
+          </div>
+          <div class="devise-item m-3">
+            <%= link_to 'ログイン',new_end_user_session_path %>
+          </div>
+          <div class="devise-item m-3">
+            <%= link_to '新規登録',new_end_user_registration_path %>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>
