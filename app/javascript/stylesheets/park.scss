@@ -1,24 +1,15 @@
-.user-info {
-  width: 50%;
+article {
+    width: 50%;
 }
-
 /* タブレット縦置きサイズ（768px）以下の際に適用される設定 */
 @media screen and (max-width:768px) {
-  .user-info {
+  article {
     width: 70%;
-  }
-  .prf-img {
-    width: 80px;
-    height: 80px;
   }
 }
 /* スマートフォンサイズ（425px）以下の際に適用される設定 */
 @media screen and (max-width:425px) {
-  .user-info {
+  article {
     width: 100%;
-  }
-  .prf-img {
-    width: 60px;
-    height: 60px;
   }
 }

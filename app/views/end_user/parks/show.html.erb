@@ -2,7 +2,7 @@
   <h1>投稿詳細</h1>
   <div class="card w-50 mx-auto shadow-lg">
 
-    <h4 class="m-2"><%= @park.name %></h4>
+    <h2 class="m-2"><%= @park.name %></h2>
     <%= image_tag @park.get_image(500,500) %>
 
     <div class='card-body'>
@@ -10,7 +10,7 @@
 
         <div class="col-2">
           <%= link_to(@park.end_user) do %>
-            <%= image_tag @park.end_user.get_profile_image(100,100), class:"mt-1 rounded-circle" %>
+            <%= image_tag @park.end_user.get_profile_image(100,100), class:"prf-img mt-1 rounded-circle" %>
           <% end %>
         </div>
 
