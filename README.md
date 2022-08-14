@@ -31,7 +31,7 @@
 https://drive.google.com/file/d/1bWcC-Envo0Ix-7YIvxiIXRrXkOfvoowA/view?usp=sharing
 ***
 - テーブル定義書
-https://drive.google.com/file/d/1I-z_1s2SD1rjvwT8NnxrVwlGGn0CLXui/view?usp=sharing
+https://drive.google.com/file/d/1f-nwtQwB8tfX2dis7JQYQvIwVxw1Tyxt/view?usp=sharing
 ***
 ## ER図
 ![ER図_SEEK_PARK drawio](https://user-images.githubusercontent.com/105696893/184517602-e715dc1b-91a4-405a-9828-cb88aea32baa.png)
