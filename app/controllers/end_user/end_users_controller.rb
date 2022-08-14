@@ -5,7 +5,7 @@ class EndUser::EndUsersController < ApplicationController
 
   def show
     @end_user = EndUser.find(params[:id])
-    @parks = @end_user.parks
+    @parks = @end_user.parks.page(params[:page]).per(5)
   end
 
   def edit
