@@ -34,7 +34,7 @@ https://drive.google.com/file/d/1bWcC-Envo0Ix-7YIvxiIXRrXkOfvoowA/view?usp=shari
 https://drive.google.com/file/d/1I-z_1s2SD1rjvwT8NnxrVwlGGn0CLXui/view?usp=sharing
 ***
 ## ER図
-![ER図_SEEK_PARK drawio](https://user-images.githubusercontent.com/105696893/182745298-d534a0e9-a313-4eda-bf32-52c58d8a2357.png)
+![ER図_SEEK_PARK drawio](https://user-images.githubusercontent.com/105696893/184517602-e715dc1b-91a4-405a-9828-cb88aea32baa.png)
 
 ## 開発環境
 - OS：Linux(CentOS)
