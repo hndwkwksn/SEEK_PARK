@@ -1,4 +1,4 @@
-<div class="card-list-container">
+<div class="card-list-container scroll-list jscroll">
   <% parks.each do |park| %>
   <article class="card w-50 mx-auto mt-1 shadow-lg">
 
@@ -32,3 +32,16 @@
   <% end %>
   <%= paginate parks %>
 </div>
+
+<script>
+  $(window).on('scroll', function() {
+  scrollHeight = $(document).height();
+  scrollPosition = $(window).height() + $(window).scrollTop();
+  if ( (scrollHeight - scrollPosition) / scrollHeight <= 0.05) {
+    $('.jscroll').jscroll({
+      contentSelector: '.scroll-list',
+      nextSelector: 'span.next:last a'
+    });
+  }
+});
+</script>

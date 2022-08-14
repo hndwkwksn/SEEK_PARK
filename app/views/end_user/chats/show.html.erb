@@ -1,20 +1,43 @@
-<h1 id="room" data-room="<%= @room.id %>" data-end_user="<%= current_end_user.id %>"><%= @end_user.name %> さんとのチャット</h1>
+<div class="container">
 
-<div class="message" style="width: 400px;">
-  <% @chats.each do |chat| %>
-    <% if chat.end_user_id == current_end_user.id %>
-      <p style="text-align: right;"><%= chat.message %></p>
-    <% else %>
-      <p style="text-align: left;"><%= chat.message %></p>
-    <% end %>
-  <% end %>
+    <div class="row">
+      <div class="col-sm-12 col-md-8 m-auto">
+        <h3 class=""  id="room" data-room="<%= @room.id %>" data-end_user="<%= current_end_user.id %>"><%= @end_user.name %> さんとのチャット</h3>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-12 col-md-8 m-auto">
+        <div class="message bg-info m-auto" style="width: 400px;">
+          <% @chats.each do |chat| %>
+            <% if chat.end_user_id == current_end_user.id %>
+              <p style="text-align: right;"><%= chat.message %></p>
+            <% else %>
+              <p style="text-align: left;"><%= chat.message %></p>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-12 col-md-8 m-auto">
+        <div class="errors m-auto">
+          <%= render "layouts/errors", obj: @chat %>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-12 col-md-8 m-auto">
+        <div class="form-group m-auto" style="width: 400px;">
+          <%= form_with model: @chat, data: {remote: true} do |f| %>
+            <%= f.text_field :message, class: "form-control" %>
+            <%= f.hidden_field :room_id %>
+            <%= f.submit "送信", class: 'btn btn-success mt-3' %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
 </div>
-
-<div class="errors">
-  <%= render "layouts/errors", obj: @chat %>
-</div>
-
-<%= form_with model: @chat, data: {remote: true} do |f| %>
-  <%= f.text_field :message %>
-  <%= f.hidden_field :room_id %>
-<% end %>

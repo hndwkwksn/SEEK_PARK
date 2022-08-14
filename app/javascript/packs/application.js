@@ -14,7 +14,6 @@ import "bootstrap";
 import "../stylesheets/application";
 import '@fortawesome/fontawesome-free/js/all';
 import "./map";
-import "./jquery.jscroll.min";
 
 Rails.start()
 Turbolinks.start()
