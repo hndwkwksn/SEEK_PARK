@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  namespace :end_user do
+    get 'chats/show'
+  end
   # 顧客用
   # URL /end_users/sign_in ...
   devise_for :end_users,skip: [:passwords], controllers: {
