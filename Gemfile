@@ -66,3 +66,5 @@ gem 'dotenv-rails'
 gem 'geocoder'
 # Railsとjavascriptの連携
 gem 'gon'
+
+gem 'kaminari'
