@@ -38,6 +38,11 @@
           <%=link_to"お気に入り記事",favorites_end_user_path(@end_user) %>
         <% end %>
       </div>
+      <divv class="row">
+        <% if current_end_user != @end_user && current_end_user.following?(@end_user) && @end_user.following?(current_end_user) %>
+          <%= link_to"DM", chat_path(@end_user.id) %>
+        <% end %>
+      </divv>
     </div>
 
   </div>

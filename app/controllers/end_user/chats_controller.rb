@@ -20,7 +20,7 @@ class EndUser::ChatsController < ApplicationController
 
   def create
     @chat = current_end_user.chats.new(chat_params)
-    render :validater unless @chat.save
+    render :validater unless @chat.save #新規投稿が保存されなかった場合validater.js.erbを探す
   end
 
   private
