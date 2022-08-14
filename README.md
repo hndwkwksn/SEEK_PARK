@@ -26,7 +26,7 @@
 ## 設計書
 ### UIflow
 - エンド
-https://drive.google.com/file/d/11aziVQ3pyMNp8gJzQOVa-jGVx6sk53AO/view?usp=sharing
+![エンド側_uiflows(SEEK_PARK)](https://user-images.githubusercontent.com/105696893/184519603-12e28eef-398d-4054-ae8c-014c191d0d2d.png)
 - 管理者
 https://drive.google.com/file/d/1bWcC-Envo0Ix-7YIvxiIXRrXkOfvoowA/view?usp=sharing
 ***
