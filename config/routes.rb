@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-  namespace :end_user do
-    get 'chats/show'
-  end
   # 顧客用
   # URL /end_users/sign_in ...
   devise_for :end_users,skip: [:passwords], controllers: {
@@ -13,6 +10,7 @@ Rails.application.routes.draw do
     root :to =>"homes#top"
     get '/end_users/unsubscribe' => 'end_users#unsubscribe'
     patch '/end_users/withdraw' => 'end_users#withdraw'
+
     resources :end_users, only: [:show,:edit,:update] do
       member do  # member doを使うと、ユーザーidが含まれてるurlを使える様になる。
         get :favorites
@@ -21,10 +19,14 @@ Rails.application.routes.draw do
       get 'followings' => 'relationships#followings', as: 'followings'
       get 'followers' => 'relationships#followers', as: 'followers'
     end
+
     resources :parks, only: [:new,:index,:create,:show,:edit,:update,:destroy] do
       resources :park_comments, only: [:create, :destroy]
       resource :favorites, only: [:create, :destroy]  # 単数形にすると、/:idがURLに含まれなくなる。
     end
+
+    resources :chats, only: [:show, :create]
+
     devise_scope :end_user do
       post 'end_users/guest_sign_in', to: 'end_users/sessions#guest_sign_in'
     end
