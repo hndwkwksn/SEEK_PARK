@@ -2,6 +2,8 @@
 @import '~@fortawesome/fontawesome-free/scss/fontawesome';
 @import 'body';
 @import 'map';
+@import 'user_form';
+@import 'font';
 
 // 無限スクロールの為、'kaminari'のページ遷移ボタンを非表示にする
 nav.pagination {
