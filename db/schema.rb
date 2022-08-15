@@ -64,7 +64,7 @@ ActiveRecord::Schema.define(version: 2022_08_13_235522) do
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "name", default: "", null: false
-    t.text "introduction", default: "", null: false
+    t.text "introduction"
     t.boolean "is_deleted", default: false, null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
@@ -100,7 +100,7 @@ ActiveRecord::Schema.define(version: 2022_08_13_235522) do
   create_table "parks", force: :cascade do |t|
     t.integer "end_user_id", null: false
     t.string "name", default: "", null: false
-    t.text "introduction", default: "", null: false
+    t.text "introduction", null: false
     t.text "address", default: "", null: false
     t.float "latitude"
     t.float "longitude"
