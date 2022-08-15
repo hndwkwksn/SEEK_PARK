@@ -62,9 +62,14 @@ gem 'ransack'
 gem 'jquery-rails'
 
 gem 'dotenv-rails'
+
 # 緯度・経度の取得
 gem 'geocoder'
 # Railsとjavascriptの連携
 gem 'gon'
 
 gem 'kaminari'
+
+group :production do
+  gem 'mysql2'
+end
