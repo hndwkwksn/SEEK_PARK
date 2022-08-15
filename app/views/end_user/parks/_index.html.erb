@@ -8,13 +8,13 @@
     <div class="card-body">
       <div class="row">
 
-        <div class="col-2">
+        <div class="col-sm-4 col-md-3">
           <%= link_to(park.end_user) do %>
             <%= image_tag park.end_user.get_profile_image(100,100), class:"prf-img mt-2 rounded-circle" %></br>
           <% end %>
         </div>
 
-        <div class="col-10">
+        <div class="col-sm-8 col-md-9">
           <p class="card-title"><%= park.end_user.name %></p>
           <p class="card-title"><%= park.address %></p>
           <p class="card-title"><%= park.introduction %></p>

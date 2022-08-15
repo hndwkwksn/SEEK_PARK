@@ -1,0 +1,23 @@
+header {
+    height: 80px;
+}
+.nav-container {
+    height: 70px;
+}
+.logo{
+    height: 80%;
+}
+/* タブレット縦置きサイズ（768px）以下の際に適用される設定 */
+@media screen and (max-width:768px) {
+  .logo {
+    width: 224px;
+    height: 70px;
+  }
+}
+/* スマートフォンサイズ（425px）以下の際に適用される設定 */
+@media screen and (max-width:425px) {
+  .logo {
+    width: 160px;
+    height: 50px;
+  }
+}
