@@ -59,8 +59,6 @@ gem 'devise'
 # 検索機能
 gem 'ransack'
 
-gem 'jquery-rails'
-
 gem 'dotenv-rails'
 
 # 緯度・経度の取得
