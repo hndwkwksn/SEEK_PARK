@@ -4,7 +4,7 @@ class CreateParks < ActiveRecord::Migration[6.1]
       t.integer :end_user_id, null: false
       t.string :name, null: false, default: ""
       t.text :introduction, null: false
-      t.text :address, null: false, default: ""
+      t.text :address, null: false
       t.float :latitude
       t.float :longitude
 

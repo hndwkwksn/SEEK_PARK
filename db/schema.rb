@@ -101,7 +101,7 @@ ActiveRecord::Schema.define(version: 2022_08_13_235522) do
     t.integer "end_user_id", null: false
     t.string "name", default: "", null: false
     t.text "introduction", null: false
-    t.text "address", default: "", null: false
+    t.text "address", null: false
     t.float "latitude"
     t.float "longitude"
     t.datetime "created_at", precision: 6, null: false
