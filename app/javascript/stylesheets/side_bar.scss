@@ -1,0 +1,23 @@
+.sidebox {
+  position: sticky;
+  top: 100px;
+  border: solid 1px #669900;
+}
+.side-menue {
+  padding: 16px 0px;
+  background-color: black;
+}
+.side-link {
+  padding: 12px;
+}
+.side-item {
+  margin-left: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #FFF;
+  text-shadow:
+	0 0 0.10em #2962FF,
+	0 0 0.15em #2962FF,
+	0 0 0.80em #2962FF,
+	0 0 1.00em #2962FF;
+}
