@@ -55,3 +55,19 @@
 
   </div>
 </div>
+
+<script>
+  let map
+  // map表示機能
+  function initMap(){
+       map = new google.maps.Map(document.getElementById('show-map'), {
+         center: {lat: gon.park.latitude, lng: gon.park.longitude},
+         zoom: 12,
+       });
+
+       marker = new google.maps.Marker({
+         position:  {lat: gon.park.latitude, lng: gon.park.longitude},
+         map: map
+       });
+  }
+</script>

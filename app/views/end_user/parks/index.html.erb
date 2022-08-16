@@ -1,9 +1,16 @@
-<div class="col-8 mt-3">
-  <h1>みんなの投稿</h1>
+<div class="col-4">
+  <div><%= link_to "みんなの投稿", parks_path %></div>
+  <div><%= link_to "マイページ", end_user_path(current_end_user) %></div>
+  <div><%= link_to "フォロー中", end_user_followings_path(@end_user) %></div>
+  <div><%= link_to "フォロワー", end_user_followers_path(@end_user) %></div>
+  <div><%= link_to"お気に入り記事",favorites_end_user_path(@end_user) %></div>
+  <div><%= link_to "投稿", new_park_path, data: {"turbolinks" => false} %></div>
 </div>
 
-<div class="col-4 mt-3">
-  <%= render 'search_form', parks: @q %>
+<div class="col-8">
+  <div>
+    <h1>みんなの投稿</h1>
+    <%= render 'search_form', parks: @q %>
+  </div>
+  <%= render 'index', parks: @parks %>
 </div>
-
-<%= render 'index', parks: @parks %>

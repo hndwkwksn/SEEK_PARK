@@ -1,10 +1,8 @@
-<div class="float-right">
-  <%= search_form_for @q, url: parks_path do |f| %>
-  <div class="input-group mb-3">
-    <%= f.search_field :end_user_name_or_name_or_address_or_tags_name_cont, placeholder: 'キーワード検索' %>
-    <div class="input-group-append">
-      <%= f.submit '検索',class: 'btn btn-primary' %>
-    </div>
+<%= search_form_for @q, url: parks_path do |f| %>
+<div class="input-group mb-3">
+  <%= f.search_field :end_user_name_or_name_or_address_or_tags_name_cont, placeholder: 'キーワード検索' %>
+  <div class="input-group-append">
+    <%= f.submit '検索',class: 'btn btn-primary' %>
   </div>
-  <% end %>
 </div>
+<% end %>

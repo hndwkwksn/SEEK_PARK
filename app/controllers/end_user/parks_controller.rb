@@ -1,6 +1,7 @@
 class EndUser::ParksController < ApplicationController
   before_action :authenticate_end_user!
   before_action :ensure_correct_end_user, only: [:edit, :update, :destroy]
+  before_action :end_user_form, only: [:index, :show, :edit, :new]
 
   def new
     @park = Park.new
@@ -58,5 +59,9 @@ class EndUser::ParksController < ApplicationController
     unless @park.end_user == current_end_user
       redirect_to end_user_path(current_end_user)
     end
+  end
+
+  def end_user_form
+    @end_user = current_end_user
   end
 end
