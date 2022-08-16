@@ -39,7 +39,7 @@ function codeAddress(){
           position: results[0].geometry.location
       });
     } else {
-      // alert('該当する結果がありませんでした：' + status);
+      // alert('住所を取得出来ません：' + status);
     }
   });
 }
