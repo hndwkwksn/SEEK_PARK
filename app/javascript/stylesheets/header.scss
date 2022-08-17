@@ -1,8 +1,16 @@
-header {
-    height: 80px;
+nav {
+    background:rgba(255,255,255,0.95);
 }
 .nav-container {
     height: 70px;
+}
+.h {
+  color: #FFF;
+  text-shadow:
+	0 0 0.10em #2962FF,
+	0 0 0.15em #2962FF,
+	0 0 0.80em #2962FF,
+	0 0 1.00em #2962FF;
 }
 
 /* タブレット縦置きサイズ（768px）以下の際に適用される設定 */

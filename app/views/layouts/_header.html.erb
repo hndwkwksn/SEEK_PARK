@@ -1,5 +1,5 @@
 <header class="fixed-top">
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-light">
+  <nav class="navbar navbar-expand-lg navbar-light">
     <div class="container">
 
       <a class="navbar-brand p-3" href="/"><%= image_tag 'logo-transparent.png',size: "160x50", class: "logo" %></a>
@@ -12,31 +12,38 @@
         <ul class="navbar-nav ml-auto">
         <% if end_user_signed_in? %>
           <li class="nav-item">
-            <%= link_to "みんなの投稿", parks_path, class: 'nav-link text-light' %>
+            <%= link_to parks_path, class: 'nav-link' do %>
+              <span class="h">みんなの投稿</span>
+            <% end %>
           </li>
           <li class="nav-item">
-            <%= link_to "マイページ", end_user_path(current_end_user), class: 'nav-link text-light' %>
+            <%= link_to end_user_path(current_end_user), class: 'nav-link' do %>
+              <span class="h">マイページ</span>
+            <% end %>
           </li>
           <li class="nav-item">
-            <%= link_to "投稿", new_park_path, class: 'nav-link text-light', data: {"turbolinks" => false} %>
+            <%= link_to new_park_path, class: 'nav-link', data: {"turbolinks" => false} do %>
+              <span class="h">投稿</span>
+            <% end %>
           </li>
           <li class="nav-item">
-            <%= link_to "ログアウト", destroy_end_user_session_path, method: :delete, class: "nav-link text-light" %>
+            <%= link_to destroy_end_user_session_path, method: :delete, class: "nav-link" do %>
+              <span class="h">ログアウト</span>
+            <% end %>
           </li>
         <% elsif admin_signed_in? %>
           <li class="nav-item">
-            <%= link_to "会員一覧", admin_end_users_path, class: "nav-link text-light" %>
+            <%= link_to admin_end_users_path, class: "nav-link" do %>
+              <span class="h">会員一覧</span>
+            <% end %>
           </li>
           <li class="nav-item">
-            <%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class: "nav-link text-light" %>
+            <%= link_to destroy_admin_session_path, method: :delete, class: "nav-link" do %>
+              <span class="h">ログアウト</span>
+            <% end %>
           </li>
         <% else %>
-          <li class="nav-item">
-            <%= link_to "新規登録", new_end_user_registration_path, class: "nav-link text-light" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "ログイン", new_end_user_session_path, class: "nav-link text-light" %>
-          </li>
+              <span class="h">ようこそ！</span>
         <% end %>
         </ul>
       </div>

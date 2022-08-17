@@ -7,13 +7,21 @@
 @import 'header';
 @import 'side_bar';
 
-body {
-  background-color: black;
-}
 // 無限スクロールの為、'kaminari'のページ遷移ボタンを非表示にする
 nav.pagination {
   display: none;
 }
 .scroll-list {
   padding: 0;
+}
+
+// ダークモード対応
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #000;
+    color: #fff;
+  }
+  nav {
+    background:rgba(0,0,0,0.9);
+  }
 }
