@@ -1,38 +1,4 @@
-<div class="col-3">
-  <div class="sidebox">
-    <div class="side-menue">
-      <%= link_to parks_path,class: "side-link" do %>
-        <i class="fas fa-leaf"></i>
-        <span class="side-item">みんなの投稿</span>
-      <% end %>
-    </div>
-    <div class="side-menue">
-      <%= link_to end_user_path(current_end_user),class: "side-link" do %>
-        <i class="fas fa-home"></i>
-        <span class="side-item">マイページ</span>
-      <% end %>
-    </div>
-    <div class="side-menue">
-      <%= link_to end_user_followings_path(@end_user),class: "side-link" do %>
-        <i class="fas fa-user-friends"></i>
-        <span class="side-item">フォロー中</span>
-      <% end %>
-    </div>
-    <div class="side-menue">
-      <%= link_to end_user_followers_path(@end_user),class: "side-link" do %>
-        <i class="fas fa-handshake"></i>
-        <span class="side-item">フォロワー</span>
-      <% end %>
-    </div>
-    <div class="side-menue">
-      <%= link_to favorites_end_user_path(@end_user),class: "side-link" do %>
-        <i class="fas fa-heart"></i>
-        <span class="side-item">お気に入り記事</span>
-      <% end %>
-    </div>
-    <div class="side-menue"><%= link_to "投稿", new_park_path, class: "side-item", data: {"turbolinks" => false} %></div>
-  </div>
-</div>
+<%= render 'layouts/sidebar' %>
 
 <div class="col-9">
   <div>

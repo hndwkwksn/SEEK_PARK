@@ -1,7 +1,7 @@
-<h1>EndUsers#edit</h1>
+<%= render 'layouts/sidebar' %>
 
-<div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
-  <h2>User info</h2>
+<div class="col-9">
+  <h1>プロフィール編集</h1>
   <%= form_with model:@end_user, local:true do |f| %>
     <div class="form-group">
       <%= f.label :プロフィール画像 %>
@@ -19,6 +19,6 @@
       <%= f.submit '更新',class: 'btn btn-secondary' %>
     </div>
   <% end %>
-</div>
 
-<%= link_to "戻る", end_user_path(@end_user) %>
+  <%= link_to "戻る", end_user_path(@end_user) %>
+</div>

@@ -1,49 +1,53 @@
-<div class="card user-info mx-auto mt-1 shadow-lg">
+<%= render 'layouts/sidebar' %>
 
-  <h1>プロフィール</h1>
-  <div class='m-5'>
-    <div class="row">
-      <div>
-        <%= image_tag @end_user.get_profile_image(100,100), class:"prf-img mt-2 rounded-circle" %>
+<div class="col-9">
+  <div class="card user-info mx-auto mt-1 shadow-lg">
+
+    <h1>プロフィール</h1>
+    <div class='m-5'>
+      <div class="row">
+        <div>
+          <%= image_tag @end_user.get_profile_image(100,100), class:"prf-img mt-2 rounded-circle" %>
+        </div>
       </div>
-    </div>
 
-    <div class="row">
-    	<div><%= @end_user.name %></div>
-    	<div>
-      <% if current_end_user != @end_user %>
-        <div><%= render "end_user/relationships/btn", end_user: @end_user %></div>
-      <% else %>
-        <% if @end_user.name != "guestuser" %>
-          <%= link_to "edit", edit_end_user_path(@end_user) %>
+      <div class="row">
+      	<div><%= @end_user.name %></div>
+      	<div>
+        <% if current_end_user != @end_user %>
+          <div><%= render "end_user/relationships/btn", end_user: @end_user %></div>
+        <% else %>
+          <% if @end_user.name != "guestuser" %>
+            <%= link_to "edit", edit_end_user_path(@end_user) %>
+          <% end %>
         <% end %>
-      <% end %>
+        </div>
       </div>
+
+      <div class="row">
+      	<div><%= @end_user.introduction %></div>
+      </div>
+
+      <div class="row">
+        <div>フォロー中</div>
+        <div><%= link_to @end_user.followings.count, end_user_followings_path(@end_user) %></div>
+        <div>フォロワー</div>
+        <div><%= link_to @end_user.followers.count, end_user_followers_path(@end_user) %></div>
+      </div>
+
+      <div class="row">
+        <% if current_end_user == @end_user %>
+          <%= link_to"お気に入り記事",favorites_end_user_path(@end_user) %>
+        <% end %>
+      </div>
+      <divv class="row">
+        <% if current_end_user != @end_user && current_end_user.following?(@end_user) && @end_user.following?(current_end_user) %>
+          <%= link_to"DM", chat_path(@end_user.id) %>
+        <% end %>
+      </divv>
     </div>
 
-    <div class="row">
-    	<div><%= @end_user.introduction %></div>
-    </div>
-
-    <div class="row">
-      <div>フォロー中</div>
-      <div><%= link_to @end_user.followings.count, end_user_followings_path(@end_user) %></div>
-      <div>フォロワー</div>
-      <div><%= link_to @end_user.followers.count, end_user_followers_path(@end_user) %></div>
-    </div>
-
-    <div class="row">
-      <% if current_end_user == @end_user %>
-        <%= link_to"お気に入り記事",favorites_end_user_path(@end_user) %>
-      <% end %>
-    </div>
-    <divv class="row">
-      <% if current_end_user != @end_user && current_end_user.following?(@end_user) && @end_user.following?(current_end_user) %>
-        <%= link_to"DM", chat_path(@end_user.id) %>
-      <% end %>
-    </divv>
   </div>
 
+  <%= render 'end_user/parks/index', parks: @parks %>
 </div>
-
-<%= render 'end_user/parks/index', parks: @parks %>

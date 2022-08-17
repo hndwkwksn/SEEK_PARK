@@ -1,6 +1,10 @@
-<h1>フォロー中</h1>
-<% if @end_users.exists? %>
-  <%= render 'end_user/end_users/index', end_users: @end_users %>
-<% else %>
-  <p>ユーザーはいません</p>
-<% end %>
+<%= render 'layouts/sidebar' %>
+
+<div class="col-9">
+  <h1>フォロー中</h1>
+  <% if @end_users.exists? %>
+    <%= render 'end_user/end_users/index', end_users: @end_users %>
+  <% else %>
+    <p>ユーザーはいません</p>
+  <% end %>
+</div>
