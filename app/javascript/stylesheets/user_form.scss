@@ -1,9 +1,26 @@
+.prf-container {
+  margin: 15px;
+}
 .user-info {
   // width: 50%;
 }
 .post-prf {
   padding: 2%;
   text-align: center;
+}
+.link-btn {
+  padding: 5px 16px;
+  color: rgb(15, 20, 25);
+  font-weight: bold;
+  border-color: rgb(207, 217, 222);
+  border-style: solid;
+  border-radius: 9999px;
+}
+.relationships {
+  display: flex;
+}
+.following {
+  margin-right: 25px;
 }
 
 /* タブレット縦置きサイズ（768px）以下の際に適用される設定 */
