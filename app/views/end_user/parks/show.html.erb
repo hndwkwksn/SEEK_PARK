@@ -1,7 +1,7 @@
 <%= render 'layouts/sidebar' %>
 
 <div class="col-md-10 col-lg-9">
-  <div class="post-detail mx-auto py-3 bg-light">
+  <div class="post-detail mx-auto py-3">
     <h1>投稿詳細</h1>
     <div class="card mx-auto shadow-lg">
 
@@ -12,29 +12,41 @@
         <div class="row">
 
           <div class="col-2">
-            <%= link_to(@park.end_user) do %>
-              <%= image_tag @park.end_user.get_profile_image(100,100), class:"prf-img mt-1 rounded-circle" %>
-            <% end %>
+            <div class="post-prf">
+              <%= link_to(@park.end_user) do %>
+                <%= image_tag @park.end_user.get_profile_image(100,100), class:"prf-img rounded-circle" %>
+              <% end %>
+            </div>
           </div>
 
-          <div class="col-10">
-            <p class="card-title"><%= @park.end_user.name %></p>
+          <div class="col-10 w-100">
+            <div class="post-info">
+              <p class="card-title"><%= @park.end_user.name %></p>
+              <p><%= @park.created_at.strftime('%Y/%m/%d') %></p>
+            </div>
             <p class="card-title"><%= @park.introduction %></p>
-            <p class="card-title">
+            <div>
               <% @park.tags.each do |tag| %>
-                <%= tag.name %>
+                <span class="tag-item"><%= tag.name %></span>
               <% end %>
-            </p>
-            <div class="card-title" id="show-map"></div>
-            <div class="card-title" id="favorite_buttons_<%= @park.id %>">
-              <%= render "end_user/favorites/btn", park: @park %>
             </div>
-            <% if @park.end_user == current_end_user %>
-            <div>
-              <%= link_to 'Edit', edit_park_path(@park), data: {"turbolinks" => false} %>
-            </div>
-            <div>
-              <%= link_to 'Destroy', @park, method: :delete, data: { confirm: '本当に削除しますか？' } %>
+            <p class="card-title"><%= @park.address %></p>
+            <div id="show-map"></div>
+            <div class="post-info">
+              <div id="favorite_buttons_<%= @park.id %>">
+                <%= render "end_user/favorites/btn", park: @park %>
+              </div>
+              <% if @park.end_user == current_end_user %>
+              <div>
+                <%= link_to edit_park_path(@park),class: "btn btn-success", data: {"turbolinks" => false} do %>
+                  <span>編集</span>
+                <% end %>
+              </div>
+              <div>
+                <%= link_to @park, method: :delete,class: "btn btn-danger" ,data: { confirm: '本当に削除しますか？' } do %>
+                  <span>投稿を削除</span>
+                <% end %>
+              </div>
             </div>
             <% end %>
           </div>
@@ -43,14 +55,14 @@
 
         <hr>
 
-        <div class="comments card-text">
+        <div class="comments card-text w-100 p-3">
           <h4>件のコメント</h4>
           <div class="park-comments-index">
             <%= render "end_user/park_comments/index", park: @park %>
           </div>
         </div>
 
-        <div class="new-comments card-text">
+        <div class="new-comments card-text w-100 p-3">
           <%= render "end_user/park_comments/form", park: @park, park_comment: @park_comment %>
         </div>
 
