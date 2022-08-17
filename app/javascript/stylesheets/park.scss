@@ -1,15 +1,15 @@
-article {
-    // width: 50%;
-}
-/* タブレット縦置きサイズ（768px）以下の際に適用される設定 */
-@media screen and (max-width:768px) {
-  article {
-    width: 70%;
-  }
-}
-/* スマートフォンサイズ（425px）以下の際に適用される設定 */
-@media screen and (max-width:425px) {
-  article {
-    width: 100%;
-  }
-}
+// article {
+//   width: 50%;
+// }
+// /* タブレット縦置きサイズ（768px）以下の際に適用される設定 */
+// @media screen and (max-width:768px) {
+//   article {
+//     width: 70%;
+//   }
+// }
+// /* スマートフォンサイズ（425px）以下の際に適用される設定 */
+// @media screen and (max-width:425px) {
+//   article {
+//     width: 100%;
+//   }
+// }

@@ -1,7 +1,6 @@
 .sidebox {
   position: sticky;
   top: 100px;
-  border: solid 1px #669900;
 }
 .side-menue {
   padding: 16px 0px;
@@ -20,4 +19,10 @@
 	0 0 0.15em #2962FF,
 	0 0 0.80em #2962FF,
 	0 0 1.00em #2962FF;
+}
+/* タブレット縦置きサイズ（768px）以下の際に適用される設定 */
+@media screen and (max-width:768px) {
+  .sidebar {
+    display: none;
+  }
 }
