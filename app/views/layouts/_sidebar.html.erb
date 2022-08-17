@@ -13,19 +13,19 @@
       <% end %>
     </div>
     <div class="side-menue">
-      <%= link_to end_user_followings_path(@end_user),class: "side-link" do %>
+      <%= link_to end_user_followings_path(current_end_user),class: "side-link" do %>
         <i class="fas fa-user-friends"></i>
         <span class="side-item">フォロー中</span>
       <% end %>
     </div>
     <div class="side-menue">
-      <%= link_to end_user_followers_path(@end_user),class: "side-link" do %>
+      <%= link_to end_user_followers_path(current_end_user),class: "side-link" do %>
         <i class="fas fa-handshake"></i>
         <span class="side-item">フォロワー</span>
       <% end %>
     </div>
     <div class="side-menue">
-      <%= link_to favorites_end_user_path(@end_user),class: "side-link" do %>
+      <%= link_to favorites_end_user_path(current_end_user),class: "side-link" do %>
         <i class="fas fa-heart"></i>
         <span class="side-item">お気に入り記事</span>
       <% end %>
