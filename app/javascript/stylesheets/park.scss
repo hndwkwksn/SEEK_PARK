@@ -1,15 +1,11 @@
-// article {
-//   width: 50%;
-// }
-// /* タブレット縦置きサイズ（768px）以下の際に適用される設定 */
-// @media screen and (max-width:768px) {
-//   article {
-//     width: 70%;
-//   }
-// }
-// /* スマートフォンサイズ（425px）以下の際に適用される設定 */
-// @media screen and (max-width:425px) {
-//   article {
-//     width: 100%;
-//   }
-// }
+.tag-item {
+  padding: 6px;
+  color: #FFF;
+  background-color: #55c500;
+  border-radius: 9999px;
+}
+.post-info {
+  margin: 2% 0;
+  display: flex;
+  justify-content: space-between;
+}

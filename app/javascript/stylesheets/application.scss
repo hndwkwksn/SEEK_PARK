@@ -14,7 +14,9 @@ nav.pagination {
 .scroll-list {
   padding: 0;
 }
-
+.card {
+  background-color: transparent;
+}
 // ダークモード対応
 @media (prefers-color-scheme: dark) {
   body {
