@@ -22,6 +22,15 @@
 .following {
   margin-right: 25px;
 }
+.follow-list {
+  padding: 12px 16px;
+  border-color: rgb(207, 217, 222);
+  border-style: solid;
+  display: flex;
+}
+.icon-box {
+  margin-right: 12px;
+}
 
 /* タブレット縦置きサイズ（768px）以下の際に適用される設定 */
 @media screen and (max-width:768px) {
