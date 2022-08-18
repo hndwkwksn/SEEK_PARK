@@ -1,24 +1,30 @@
 <%= render 'layouts/sidebar' %>
 
-<div class="col-md-10 col-lg-9">
+<div class="col-md-5 col-sm-10 mx-2 mx-sm-auto text-center rounded px-0 my-5 form-border">
   <h1>プロフィール編集</h1>
-  <%= form_with model:@end_user, local:true do |f| %>
-    <div class="form-group">
-      <%= f.label :プロフィール画像 %>
-      <%= f.file_field :profile_image, class: "form-control-file user_image", accept: 'image/*' %>
-    </div>
-    <div class="form-group">
-      <%= f.label :ユーザー名 %>
-      <%= f.text_field :name, class: "form-control name" %>
-    </div>
-    <div class="form-group">
-      <%= f.label :自己紹介 %>
-      <%= f.text_area :introduction, class: "form-control introduction" %>
-    </div>
-    <div class="form-group">
-      <%= f.submit '更新',class: 'btn btn-secondary' %>
-    </div>
-  <% end %>
 
-  <%= link_to "戻る", end_user_path(@end_user) %>
+  <div class="form-body p-4">
+    <%= form_with model:@end_user, local:true do |f| %>
+      <div class="form-group">
+        <%= f.label :プロフィール画像 %>
+        <%= f.file_field :profile_image, class: "form-control-file user_image", accept: 'image/*' %>
+      </div>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" aria-hidden="true">ユーザー名</span>
+        </div>
+        <%= f.text_field :name, class: "form-control name" %>
+      </div>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" aria-hidden="true">自己紹介</span>
+        </div>
+        <%= f.text_area :introduction, class: "form-control introduction" %>
+      </div>
+      <div class="form-group">
+        <%= f.submit '更新',class: 'btn btn-secondary' %>
+      </div>
+    <% end %>
+  </div>
+
 </div>

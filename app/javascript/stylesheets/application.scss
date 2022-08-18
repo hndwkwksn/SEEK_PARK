@@ -17,6 +17,10 @@ nav.pagination {
 .card {
   background-color: transparent;
 }
+.form-border {
+  border-style: solid;
+  border-color: rgb(207, 217, 222);
+}
 // ダークモード対応
 @media (prefers-color-scheme: dark) {
   body {
