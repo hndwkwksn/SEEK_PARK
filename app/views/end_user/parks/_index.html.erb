@@ -1,6 +1,6 @@
 <div class="scroll-list jscroll">
   <% parks.each do |park| %>
-  <article class="card mx-auto mt-1 shadow-lg">
+  <article class="card mx-auto mt-1 form-border">
 
     <h2 class="m-4"><%= link_to park.name, park,data: {"turbolinks" => false} %></h2>
     <%= image_tag park.get_image(500,500), class:"card-img-top"; %>

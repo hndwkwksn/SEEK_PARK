@@ -6,6 +6,7 @@
 @import 'font';
 @import 'header';
 @import 'side_bar';
+@import 'chat';
 
 // 無限スクロールの為、'kaminari'のページ遷移ボタンを非表示にする
 nav.pagination {
@@ -20,6 +21,9 @@ nav.pagination {
 .form-border {
   border-style: solid;
   border-color: rgb(207, 217, 222);
+}
+.d-flx {
+  display: flex;
 }
 // ダークモード対応
 @media (prefers-color-scheme: dark) {

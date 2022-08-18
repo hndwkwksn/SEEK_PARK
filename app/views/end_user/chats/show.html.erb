@@ -1,43 +1,45 @@
 <%= render 'layouts/sidebar' %>
 
-<div class="col-md-10 col-lg-9">
-  <div class="row">
-    <div class="col-sm-12 col-md-8 m-auto">
-      <h1  id="room" data-room="<%= @room.id %>" data-end_user="<%= current_end_user.id %>"><%= @end_user.name %> さんとのチャット</h1>
-    </div>
+<div class="col-md-8 col-sm-12 mx-sm-auto text-center rounded px-0 my-5 form-border">
+
+  <div class="form-border">
+    <h1  id="room" data-room="<%= @room.id %>" data-end_user="<%= current_end_user.id %>"><%= @end_user.name %> さんとのチャット</h1>
   </div>
 
-  <div class="row">
-    <div class="col-sm-12 col-md-8 m-auto">
-      <div class="message bg-info m-auto" style="width: 400px;">
-        <% @chats.each do |chat| %>
-          <% if chat.end_user_id == current_end_user.id %>
-            <p style="text-align: right;"><%= chat.message %></p>
-          <% else %>
-            <p style="text-align: left;"><%= chat.message %></p>
-          <% end %>
-        <% end %>
+  <div class="message chat-box">
+    <% @chats.each do |chat| %>
+      <% if chat.end_user_id == current_end_user.id %>
+      <div class="m-myself">
+        <span class="m-message"><%= chat.message %></span>
       </div>
-    </div>
+      <% else %>
+      <div class="m-partner">
+        <span class="p-message"><%= chat.message %></span>
+      </div>
+      <% end %>
+    <% end %>
   </div>
 
-  <div class="row">
-    <div class="col-sm-12 col-md-8 m-auto">
-      <div class="errors m-auto">
+  <div>
+    <div>
+      <div class="errors">
         <%= render "layouts/errors", obj: @chat %>
       </div>
     </div>
   </div>
 
-  <div class="row">
-    <div class="col-sm-12 col-md-8 m-auto">
-      <div class="form-group m-auto" style="width: 400px;">
-        <%= form_with model: @chat, data: {remote: true} do |f| %>
-          <%= f.text_field :message, class: "form-control" %>
-          <%= f.hidden_field :room_id %>
-          <%= f.submit "送信", class: 'btn btn-success mt-3' %>
-        <% end %>
+  <div>
+    <%= form_with model: @chat, data: {remote: true} do |f| %>
+    <div class="chat-box d-flx">
+      <div class="mx-auto">
+        <%= f.text_field :message ,class: "text-f" %>
+        <%= f.hidden_field :room_id %>
+      </div>
+      <div class="px-2">
+        <%= f.submit "送信", class: 'btn btn-success' %>
       </div>
     </div>
+    <% end %>
   </div>
+
 </div>
