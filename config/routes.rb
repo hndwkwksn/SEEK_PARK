@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
-  namespace :end_user do
-    get 'tags/index'
-  end
+
   # 顧客用
   # URL /end_users/sign_in ...
   devise_for :end_users,skip: [:passwords], controllers: {
@@ -29,6 +27,8 @@ Rails.application.routes.draw do
     end
 
     resources :chats, only: [:show, :create]
+
+    resources :tags, only: [:show]
 
     devise_scope :end_user do
       post 'end_users/guest_sign_in', to: 'end_users/sessions#guest_sign_in'
