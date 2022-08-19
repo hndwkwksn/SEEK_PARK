@@ -56,7 +56,9 @@
         <hr>
 
         <div class="comments card-text w-100 p-3">
-          <h4>件のコメント</h4>
+          <div class="park-comments-counter">
+            <%= render "end_user/park_comments/counter", park: @park %>
+          </div>
           <div class="park-comments-index">
             <%= render "end_user/park_comments/index", park: @park %>
           </div>
