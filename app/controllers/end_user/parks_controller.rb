@@ -26,7 +26,6 @@ class EndUser::ParksController < ApplicationController
   end
 
   def index
-    @q = Park.ransack(params[:q])
     @parks = @q.result(distinct: true).includes(:end_user).order(created_at: :desc).page(params[:page]).per(5)
   end
 
