@@ -26,6 +26,10 @@ nav.pagination {
 .d-flx {
   display: flex;
 }
+.errors {
+  margin: 0 auto;
+  color: red;
+}
 // ダークモード対応
 @media (prefers-color-scheme: dark) {
   body {
