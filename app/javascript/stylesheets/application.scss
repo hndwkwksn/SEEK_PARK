@@ -26,6 +26,11 @@ nav.pagination {
 .d-flx {
   display: flex;
 }
+.d-f-jc-sp {
+  margin: 2% 0;
+  display: flex;
+  justify-content: space-between;
+}
 .errors {
   margin: 0 auto;
   color: red;

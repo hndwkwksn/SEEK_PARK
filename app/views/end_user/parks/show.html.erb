@@ -20,7 +20,7 @@
           </div>
 
           <div class="col-10 w-100">
-            <div class="post-info">
+            <div class="d-f-jc-sp">
               <p class="card-title"><%= @park.end_user.name %></p>
               <p><%= @park.created_at.strftime('%Y/%m/%d') %></p>
             </div>
@@ -32,7 +32,7 @@
             </div>
             <p class="card-title"><%= @park.address %></p>
             <div id="show-map"></div>
-            <div class="post-info">
+            <div class="d-f-jc-sp">
               <div id="favorite_buttons_<%= @park.id %>">
                 <%= render "end_user/favorites/btn", park: @park %>
               </div>
