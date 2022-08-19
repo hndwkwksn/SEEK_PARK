@@ -62,6 +62,10 @@
           </div>
         </div>
 
+        <div class="errors">
+          <%= render "layouts/errors", obj: @park_comment %>
+        </div>
+
         <div class="new-comments card-text w-100 p-3">
           <%= render "end_user/park_comments/form", park: @park, park_comment: @park_comment %>
         </div>

@@ -4,6 +4,7 @@ class EndUser::ParkCommentsController < ApplicationController
     @comment = current_end_user.park_comments.new(park_comment_params)
     @comment.park_id = park.id
     @comment.save
+    render :validater unless @comment.save #新規投稿が保存されなかった場合validater.js.erbを探す
   end
 
   def destroy
