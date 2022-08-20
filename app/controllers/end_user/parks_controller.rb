@@ -34,6 +34,8 @@ class EndUser::ParksController < ApplicationController
 
   def update
     if @park.update(park_params)
+      tag_list = tag_params[:tag_name].split(',')
+      @park.save_tags(tag_list)
       redirect_to park_path(@park), notice: "You have updated park successfully."
     else
       render "edit"
@@ -50,7 +52,15 @@ class EndUser::ParksController < ApplicationController
   private
 
   def park_params
-    params.require(:park).permit(:name, :introduction, :address, :image)
+    update_params.except(:tag_name) #exceptでtag_nameだけ除外(Unpermitted parameter: :tag_name対策)
+  end
+
+  def tag_params
+   update_params.slice(:tag_name) #sliceでtag_nameだけ許可(Unpermitted parameters: :name, :introduction, :address対策)
+  end
+
+  def update_params
+    params.require(:park).permit(:name, :introduction, :address, :image, :tag_name)
   end
 
   def ensure_correct_end_user
