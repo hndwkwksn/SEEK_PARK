@@ -2,6 +2,9 @@
 
 <div class="col-md-5 col-sm-10 mx-2 mx-sm-auto text-center rounded px-0 my-5 form-border">
   <h1>プロフィール編集</h1>
+  <div class="errors">
+    <%= render "layouts/errors", obj: @end_user %>
+  </div>
 
   <div class="form-body p-4">
     <%= form_with model:@end_user, local:true do |f| %>

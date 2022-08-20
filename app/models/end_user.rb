@@ -23,6 +23,8 @@ class EndUser < ApplicationRecord
 
   has_one_attached :profile_image
 
+  validates :name,presence:true,length:{maximum:50}
+
   # 画像サイズの変更をする為　※'resize_to_limit'は元の画像サイズより大きくすることは出来ない！
   def get_profile_image(width, height)
     unless profile_image.attached?

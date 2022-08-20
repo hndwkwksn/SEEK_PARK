@@ -27,7 +27,7 @@
           <p class="card-title"><%= park.introduction %></p>
           <div>
             <% park.tags.each do |tag| %>
-              <span class="tag-item"><%= tag.name %></span>
+              <span class="tag-item"><%= link_to tag.name, search_path(content: tag.name) %></span>
             <% end %>
           </div>
           <div class="d-f-jc-sp">
