@@ -28,7 +28,7 @@ Rails.application.routes.draw do
 
     resources :chats, only: [:show, :create]
 
-    resources :tags, only: [:show]
+    get '/search', to: 'tags#search'
 
     devise_scope :end_user do
       post 'end_users/guest_sign_in', to: 'end_users/sessions#guest_sign_in'
@@ -46,7 +46,6 @@ Rails.application.routes.draw do
     patch '/end_users/withdraw' => 'end_users#withdraw', as: 'withdraw'
     resources :end_users, only: [:index,:edit,:update]
     resources :parks, only: [:edit,:destroy]
-    get "search" => "searches#search"
   end
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
