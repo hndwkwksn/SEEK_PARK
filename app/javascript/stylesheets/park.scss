@@ -1,5 +1,43 @@
-.tag-item {
-  padding: 6px;
+.p-tagu-name {
+  padding: 0.7rem 2rem;
   background-color: #55c500;
   border-radius: 9999px;
+}
+.p-tagu-name:hover {
+  color: #fff;
+  background-color: #60605e;
+  text-decoration: none;
+}
+.p-tagu-name {
+  color: #fff;
+}
+.p-name {
+  color: #212529;
+  padding: 0.7rem 2rem;
+  backface-visibility: hidden;
+  border: 0.3rem solid transparent;
+  border-radius: 3rem;
+  transition: background-color 0.3s ease-in-out;
+}
+.p-name:hover {
+  color: #fff;
+  background-color: #60605e;
+  text-decoration: none;
+}
+.p-user-prf {
+  overflow: hidden;
+  cursor: pointer;
+}
+.p-user-prf img{
+  transition-duration: 0.5s;
+}
+.p-user-prf:hover img{
+  transform: scale(1.2);
+  transition-duration: 0.5s;
+}
+.p-user-name {
+  color: #212529;
+}
+.p-user-name:hover {
+  color: #212529;
 }
