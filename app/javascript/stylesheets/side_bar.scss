@@ -10,19 +10,32 @@
 .side-menue {
   padding: 16px 0px;
 }
-.side-link {
-  padding: 12px;
+.newpost {
+  width: 90%;
+  border-radius: 9999px;
+  background-color: #55c500;
 }
-.side-item {
-  margin-left: 10px;
-  font-size: 20px;
-  font-weight: bold;
-  color: #FFF;
-  text-shadow:
-	0 0 0.10em #2962FF,
-	0 0 0.15em #2962FF,
-	0 0 0.80em #2962FF,
-	0 0 1.00em #2962FF;
+.bn3637 {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.7rem 2rem;
+  font-weight: 700;
+  font-size: 18px;
+  text-align: center;
+  text-decoration: none;
+  color: #212529;
+  backface-visibility: hidden;
+  border: 0.3rem solid transparent;
+  border-radius: 3rem;
+}
+.bn38 {
+  border-color: transparent;
+  transition: background-color 0.3s ease-in-out;
+}
+.bn38:hover {
+  color: #fff;
+  background-color: #60605e;
 }
 /* タブレット縦置きサイズ（768px）以下の際に適用される設定 */
 @media screen and (max-width:768px) {
