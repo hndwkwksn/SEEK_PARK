@@ -22,3 +22,74 @@
 #theTarget {
   z-index: 1;
 }
+.devise-item-guest a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  margin: 0 auto;
+  padding: 1em 2em;
+  width: 300px;
+  color: #333;
+  font-size: 18px;
+  font-weight: 700;
+  background-color: #ccc;
+  transition: 0.3s;
+}
+.devise-item-guest a::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  width: calc(100% - 4px);
+  height: calc(100% - 4px);
+  border: 2px solid #3d9ec8;
+  transition: 0.2s;
+}
+.devise-item-guest a::after {
+  content: '';
+  width: 5px;
+  height: 5px;
+  border-top: 3px solid #333333;
+  border-right: 3px solid #333333;
+  transform: rotate(45deg);
+}
+.devise-item-guest a:hover::before {
+  top: 0;
+  left: 0;
+}
+.devise-item-guest a:hover {
+  color: #FFF;
+  text-decoration: none;
+  background-color: #a0c4d3;
+}
+.devise-item a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  padding: 1em 2em;
+  width: 300px;
+  color: #34582c;
+  font-size: 18px;
+  font-weight: 700;
+  background-color: #00ffcc;
+  box-shadow: 0 5px 0 #008E4A;
+  transition: 0.3s;
+}
+
+.devise-item a::after {
+  content: '';
+  width: 5px;
+  height: 5px;
+  border-top: 3px solid #333333;
+  border-right: 3px solid #333333;
+  transform: rotate(45deg);
+}
+
+.devise-item a:hover {
+  color: #FFF;
+  transform: translateY(3px);
+  text-decoration: none;
+  box-shadow: 0 2px 0 #aaaaaa;
+}

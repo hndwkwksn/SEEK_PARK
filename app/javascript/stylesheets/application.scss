@@ -13,6 +13,7 @@
 nav.pagination {
   display: none;
 }
+// 無限スクロールの為、'kaminari'のページ遷移ボタンを非表示にする
 .scroll-list {
   padding: 0;
 }
