@@ -8,14 +8,11 @@
       <%= render 'end_user/parks/search_form' %>
     </div>
     <div class="prf-container">
-      <div>
-        <div>
-          <%= image_tag @end_user.get_profile_image(100,100), class:"prf-img mt-2 rounded-circle" %>
-        </div>
-      </div>
+
+      <%= image_tag @end_user.get_profile_image(100,100), class:"prf-img mt-2 rounded-circle" %>
 
       <div class="d-f-jc-sp">
-      	<div><strong><%= @end_user.name %></strong></div>
+      	<p><strong><%= @end_user.name %></strong></p>
       	<div>
         <% if current_end_user != @end_user %>
           <div><%= render "end_user/relationships/btn", end_user: @end_user %></div>
@@ -29,20 +26,18 @@
         </div>
       </div>
 
-      <div>
-      	<div><%= @end_user.introduction %></div>
-      </div>
+    	<p><%= @end_user.introduction %></p>
 
       <div class="relationships">
         <div class="following">
           <%= link_to end_user_followings_path(@end_user), class: "p-user-name link-darkmode" do %>
-            <strong><%= @end_user.followings.count %></strong>
+            <span><strong><%= @end_user.followings.count %></strong></span>
             <span>フォロー中</span>
           <% end %>
         </div>
         <div class="followers">
           <%= link_to end_user_followers_path(@end_user), class: "p-user-name link-darkmode" do %>
-            <strong><%= @end_user.followers.count %></strong>
+            <span><strong><%= @end_user.followers.count %></strong></span>
             <span>フォロワー</span>
           <% end %>
         </div>

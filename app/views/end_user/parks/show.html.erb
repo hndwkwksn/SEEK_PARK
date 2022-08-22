@@ -16,7 +16,7 @@
 
           <div class="col-2">
             <div class="post-prf">
-              <%= link_to(@park.end_user) do %>
+              <%= link_to (@park.end_user), class: "p-user-prf" do %>
                 <%= image_tag @park.end_user.get_profile_image(100,100), class:"prf-img rounded-circle" %>
               <% end %>
             </div>
@@ -24,16 +24,22 @@
 
           <div class="col-10 w-100">
             <div class="d-f-jc-sp">
-              <p class="card-title"><%= @park.end_user.name %></p>
+              <div class="card-title">
+                <%= link_to (@park.end_user),class: "p-user-name link-darkmode" do %>
+                  <p><strong><%= @park.end_user.name %></strong></p>
+                <% end %>
+              </div>
               <p><%= @park.created_at.strftime('%Y/%m/%d') %></p>
             </div>
             <p class="card-title"><%= @park.introduction %></p>
-            <div>
+            <div class="mt-5">
               <% @park.tags.each do |tag| %>
-                <span class="tag-item"><%= link_to tag.name, search_path(content: tag.name) %></span>
+                <span><%= link_to tag.name, search_path(content: tag.name), class: "p-tagu-name" %></span>
               <% end %>
             </div>
-            <p class="card-title"><%= @park.address %></p>
+            <div class="mt-5">
+              <p class="card-title"><%= @park.address %></p>
+            </div>
             <div id="show-map"></div>
             <div class="d-f-jc-sp">
               <div id="favorite_buttons_<%= @park.id %>">
@@ -41,12 +47,12 @@
               </div>
               <% if @park.end_user == current_end_user %>
               <div>
-                <%= link_to edit_park_path(@park),class: "btn btn-success", data: {"turbolinks" => false} do %>
+                <%= link_to edit_park_path(@park), class: "btn btn-success", data: {"turbolinks" => false} do %>
                   <span>編集</span>
                 <% end %>
               </div>
               <div>
-                <%= link_to @park, method: :delete,class: "btn btn-danger" ,data: { confirm: '本当に削除しますか？' } do %>
+                <%= link_to @park, method: :delete, class: "btn btn-danger" ,data: { confirm: '本当に削除しますか？' } do %>
                   <span>投稿を削除</span>
                 <% end %>
               </div>
