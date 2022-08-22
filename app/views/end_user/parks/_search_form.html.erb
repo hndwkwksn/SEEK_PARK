@@ -1,6 +1,6 @@
 <%= search_form_for @q, url: parks_path do |f| %>
 <div class="search_container">
-  <%= f.search_field :end_user_name_or_name_or_address_or_tags_name_cont, class: "", placeholder: 'キーワード検索' %>
-  <%= button_tag sanitize('<i class="fa fa-search"></i>'), :type => "submit", :class =>"btn btn-default btn-s-md" %>
+  <%= f.search_field :end_user_name_or_name_or_address_or_tags_name_cont, class: "search_form_area", placeholder: 'キーワード検索' %>
+  <%= button_tag sanitize('<i class="fa fa-search"></i>'), :type => "submit" %>
 </div>
 <% end %>

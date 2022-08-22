@@ -6,12 +6,13 @@
   padding: 3px 10px;
   border-radius: 20px;
   height: 2.3em;
-  width: 260px;
+  width: 100%;
   overflow: hidden;
 }
 .search_container input[type="search"]{
   border: none;
   height: 2.0em;
+  width: 80%;
 }
 .search_container input[type="search"]:focus {
   outline: 0;
@@ -29,4 +30,14 @@
   right: 0;
   top: -10px;
   outline : none;
+}
+/* スマートフォンサイズ（425px）以下の際に適用される設定 */
+@media screen and (max-width:425px) {
+  .search_container{
+    height: 2em;
+    width: 160px;
+  }
+  .search_form_area::placeholder {
+    font-size: 1.2rem;
+  }
 }
