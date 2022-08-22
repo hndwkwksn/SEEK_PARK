@@ -12,38 +12,38 @@
         <ul class="navbar-nav ml-auto">
         <% if end_user_signed_in? %>
           <li class="nav-item">
-            <%= link_to parks_path, class: 'nav-link' do %>
-              <span class="h">みんなの投稿</span>
+            <%= link_to parks_path, class: 'nav-link link-darkmode' do %>
+              <span>みんなの投稿</span>
             <% end %>
           </li>
           <li class="nav-item">
-            <%= link_to end_user_path(current_end_user), class: 'nav-link' do %>
-              <span class="h">マイページ</span>
+            <%= link_to end_user_path(current_end_user), class: 'nav-link link-darkmode' do %>
+              <span>マイページ</span>
             <% end %>
           </li>
           <li class="nav-item">
-            <%= link_to new_park_path, class: 'nav-link', data: {"turbolinks" => false} do %>
-              <span class="h">投稿</span>
+            <%= link_to new_park_path, class: 'nav-link link-darkmode', data: {"turbolinks" => false} do %>
+              <span>投稿</span>
             <% end %>
           </li>
           <li class="nav-item">
-            <%= link_to destroy_end_user_session_path, method: :delete, class: "nav-link" do %>
-              <span class="h">ログアウト</span>
+            <%= link_to destroy_end_user_session_path, method: :delete, class: "nav-link link-darkmode" do %>
+              <span>ログアウト</span>
             <% end %>
           </li>
         <% elsif admin_signed_in? %>
           <li class="nav-item">
-            <%= link_to admin_end_users_path, class: "nav-link" do %>
-              <span class="h">会員一覧</span>
+            <%= link_to admin_end_users_path, class: "nav-link link-darkmode" do %>
+              <span>会員一覧</span>
             <% end %>
           </li>
           <li class="nav-item">
-            <%= link_to destroy_admin_session_path, method: :delete, class: "nav-link" do %>
-              <span class="h">ログアウト</span>
+            <%= link_to destroy_admin_session_path, method: :delete, class: "nav-link link-darkmode" do %>
+              <span>ログアウト</span>
             <% end %>
           </li>
         <% else %>
-              <span class="h">ようこそ！</span>
+          <span>ようこそ！</span>
         <% end %>
         </ul>
       </div>

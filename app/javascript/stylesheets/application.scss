@@ -8,6 +8,7 @@
 @import 'side_bar';
 @import 'chat';
 @import 'top';
+@import 'search_form';
 
 // 無限スクロールの為、'kaminari'のページ遷移ボタンを非表示にする
 nav.pagination {
@@ -44,6 +45,9 @@ nav.pagination {
   }
   nav {
     background:rgba(0,0,0,0.9);
+  }
+  .navbar-toggler {
+    border-color: #fff !important;
   }
   .link-darkmode {
     color: #fff !important;
