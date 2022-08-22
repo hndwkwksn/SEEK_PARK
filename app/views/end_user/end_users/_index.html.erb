@@ -2,16 +2,18 @@
 
   <% end_users.each do |end_user| %>
     <div class="follow-list">
-      <div class="icon-box">
-        <%= image_tag end_user.get_profile_image(100,100), class:"prf-img rounded-circle" %>
+      <div class="post-prf">
+        <%= link_to (end_user), class: "p-user-prf" do %>
+          <%= image_tag end_user.get_profile_image(60,60), class:"prf-img rounded-circle" %>
+        <% end %>
       </div>
 
       <div class="w-100">
         <div class="d-f-jc-sp">
 
           <div>
-            <%= link_to end_user do %>
-              <%= end_user.name %>
+            <%= link_to end_user,class: "p-user-name link-darkmode" do %>
+              <p><strong><%= end_user.name %></strong></p>
             <% end %>
           </div>
           <div>

@@ -25,11 +25,9 @@
             <% end %>
           </div>
           <div class="d-f-jc-sp">
-            <p>
-              <%= link_to (park.end_user),class: "p-user-name link-darkmode" do %>
-                <strong><%= park.end_user.name %></strong>
-              <% end %>
-            </p>
+            <%= link_to (park.end_user),class: "p-user-name link-darkmode" do %>
+              <p><strong><%= park.end_user.name %></strong></p>
+            <% end %>
             <p>コメント数：<%= park.park_comments.count %>件</p>
             <p><%= park.created_at.strftime('%Y/%m/%d') %></p>
           </div>
