@@ -16,7 +16,13 @@
   border-style: solid;
   border-radius: 9999px;
 }
+.link-btn:hover {
+  color: #fff;
+  background-color: #60605e;
+  text-decoration: none;
+}
 .relationships {
+  margin-top: 1rem;
   display: flex;
 }
 .following {

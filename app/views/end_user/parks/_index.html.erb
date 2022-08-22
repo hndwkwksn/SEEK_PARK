@@ -2,7 +2,7 @@
   <% parks.each do |park| %>
   <article class="card mx-auto mt-1 form-border">
 
-    <h2 class="m-4"><%= link_to park.name, park, data: {"turbolinks" => false}, class: "p-name" %></h2>
+    <h2 class="m-4"><%= link_to park.name, park, data: {"turbolinks" => false}, class: "p-name link-darkmode" %></h2>
     <%= image_tag park.get_image(500,500), class:"card-img-top"; %>
 
     <div class="card-body">
@@ -26,7 +26,7 @@
           </div>
           <div class="d-f-jc-sp">
             <p>
-              <%= link_to (park.end_user),class: "p-user-name" do %>
+              <%= link_to (park.end_user),class: "p-user-name link-darkmode" do %>
                 <strong><%= park.end_user.name %></strong>
               <% end %>
             </p>
