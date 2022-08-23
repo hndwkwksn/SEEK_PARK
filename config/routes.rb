@@ -1,8 +1,5 @@
 Rails.application.routes.draw do
 
-  namespace :admin do
-    get 'admin_informations/index'
-  end
   # 顧客用
   # URL /end_users/sign_in ...
   devise_for :end_users,skip: [:passwords], controllers: {
@@ -15,7 +12,7 @@ Rails.application.routes.draw do
     get '/end_users/unsubscribe' => 'end_users#unsubscribe'
     patch '/end_users/withdraw' => 'end_users#withdraw'
 
-    resources :end_users, only: [:show,:edit,:update] do
+    resources :end_users, only: [:show, :edit, :update] do
       member do  # member doを使うと、ユーザーidが含まれてるurlを使える様になる。
         get :favorites
       end
@@ -24,7 +21,7 @@ Rails.application.routes.draw do
       get 'followers' => 'relationships#followers', as: 'followers'
     end
 
-    resources :parks, only: [:new,:index,:create,:show,:edit,:update,:destroy] do
+    resources :parks, only: [:new, :index, :create, :show, :edit, :update, :destroy] do
       resources :park_comments, only: [:create, :destroy]
       resource :favorites, only: [:create, :destroy]  # 単数形にすると、/:idがURLに含まれなくなる。
     end
@@ -47,8 +44,9 @@ Rails.application.routes.draw do
 
    namespace :admin do
     patch '/end_users/withdraw' => 'end_users#withdraw', as: 'withdraw'
-    resources :end_users, only: [:index,:edit,:update]
+    resources :end_users, only: [:index, :edit, :update]
     resources :parks, only: [:edit,:destroy]
+    resources :admin_informations, only: [:index, :create, :destroy]
   end
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
