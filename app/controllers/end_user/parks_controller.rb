@@ -13,7 +13,7 @@ class EndUser::ParksController < ApplicationController
     tag_list = params[:park][:tag_name].split(',')
     if @park.save
       @park.save_tags(tag_list)
-      redirect_to park_path(@park), notice: "You have created park successfully."
+      redirect_to park_path(@park), notice: "投稿しました。"
     else
       render 'new'
     end
@@ -36,7 +36,7 @@ class EndUser::ParksController < ApplicationController
     if @park.update(park_params)
       tag_list = tag_params[:tag_name].split(',')
       @park.save_tags(tag_list)
-      redirect_to park_path(@park), notice: "You have updated park successfully."
+      redirect_to park_path(@park), notice: "更新に成功しました。"
     else
       render "edit"
     end
@@ -44,7 +44,7 @@ class EndUser::ParksController < ApplicationController
 
   def destroy
     if @park.destroy
-      flash[:notice] = "Park was successfully destroyed."
+      flash[:notice] = "投稿を削除しました。"
       redirect_to end_user_path(current_end_user)
     end
   end

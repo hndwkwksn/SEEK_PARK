@@ -1,2 +1,20 @@
-<h1>Admin::AdminInformations#index</h1>
-<p>Find me in app/views/admin/admin_informations/index.html.erb</p>
+<div class="col-12">
+  <h1>お知らせ</h1>
+  <div class="errors">
+    <%= render "layouts/errors", obj: @admin_information %>
+  </div>
+  <%= render 'form', admin_information: @admin_information %>
+  <table>
+  <% @admin_informations.each do |admin_information| %>
+    <tr>
+      <th><%= admin_information.information %></th>
+      <th><%= admin_information.created_at.strftime('%Y/%m/%d') %></th>
+      <th>
+      <%= link_to admin_admin_information_path(admin_information), method: :delete, class: "btn btn-danger" ,data: { confirm: '本当に削除しますか？' } do %>
+        <span>削除</span>
+      <% end %>
+      </th>
+    </tr>
+  <% end %>
+  </table>
+</div>

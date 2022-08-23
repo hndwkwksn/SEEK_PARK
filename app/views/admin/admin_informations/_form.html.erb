@@ -1,0 +1,5 @@
+<%= form_with model: admin_information, url: admin_admin_informations_path do |f| %>
+  <%= f.label :お知らせ %><br />
+  <%= f.text_field :information %>
+  <%= f.submit "投稿" %>
+<% end %>
