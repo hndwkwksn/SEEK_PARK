@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  namespace :admin do
+    get 'admin_informations/index'
+  end
   # 顧客用
   # URL /end_users/sign_in ...
   devise_for :end_users,skip: [:passwords], controllers: {
