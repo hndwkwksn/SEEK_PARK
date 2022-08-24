@@ -2,6 +2,7 @@ class EndUser::EndUsersController < ApplicationController
   before_action :authenticate_end_user!
   before_action :ensure_correct_end_user, only: [:edit, :update]
   before_action :ensure_guest_user, only: [:edit]
+  before_action :admin_information, only: [:show, :edit, :favorites]
 
   def show
     @end_user = EndUser.find(params[:id])
@@ -25,11 +26,6 @@ class EndUser::EndUsersController < ApplicationController
     @favorite_parks = Park.find(favorites)
   end
 
-  def unsubscribe
-  end
-
-  def withdraw
-  end
 
   private
 
@@ -49,5 +45,9 @@ class EndUser::EndUsersController < ApplicationController
     if @end_user.name == "guestuser"
       redirect_to end_user_path(current_end_user) , notice: 'ゲストユーザーはプロフィール編集画面へ遷移できません。'
     end
+  end
+
+  def admin_information
+    @admin_informations = AdminInformation.all
   end
 end

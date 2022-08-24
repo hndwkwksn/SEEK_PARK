@@ -1,0 +1,7 @@
+<div class="col-3">
+<h2>運営からのお知らせ</h2>
+<% admin_informations.each do |admin_information| %>
+  <p><%= admin_information.created_at.strftime('%Y/%m/%d') %></p>
+  <p><%= admin_information.information %></p>
+<% end %>
+</div>

@@ -1,6 +1,7 @@
 class EndUser::RelationshipsController < ApplicationController
   before_action :authenticate_end_user!
   before_action :set_end_user
+  before_action :admin_information, only: [:followings, :followers]
 
   # フォローするとき
   def create
@@ -28,5 +29,9 @@ private
 
   def set_end_user
     @end_user = EndUser.find(params[:end_user_id])
+  end
+
+  def admin_information
+    @admin_informations = AdminInformation.all
   end
 end

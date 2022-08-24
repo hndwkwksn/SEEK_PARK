@@ -1,6 +1,6 @@
 <%= render 'layouts/sidebar' %>
 
-<div class="col-md-10 col-lg-9">
+<div class="col-md-10 col-lg-6">
   <div class="card user-info mx-auto mt-1 shadow-lg">
 
     <div class="d-f-jc-sp">
@@ -60,4 +60,7 @@
     </div>
 
   <%= render 'end_user/parks/index', parks: @parks %>
+  </div>
 </div>
+
+<%= render 'layouts/admin_information', admin_informations: @admin_informations %>

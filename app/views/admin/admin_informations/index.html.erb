@@ -1,10 +1,10 @@
-<div class="col-12">
+<div class="col-8 m-auto">
   <h1>お知らせ</h1>
   <div class="errors">
     <%= render "layouts/errors", obj: @admin_information %>
   </div>
   <%= render 'form', admin_information: @admin_information %>
-  <table>
+  <table class="table table-hover">
   <% @admin_informations.each do |admin_information| %>
     <tr>
       <th><%= admin_information.information %></th>

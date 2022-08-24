@@ -1,6 +1,6 @@
 <%= render 'layouts/sidebar' %>
 
-<div class="col-md-10 col-lg-9">
+<div class="col-md-10 col-lg-6">
   <div>
     <h1>お気に入り</h1>
   </div>
@@ -46,3 +46,5 @@
   <% end %>
 
 </div>
+
+<%= render 'layouts/admin_information', admin_informations: @admin_informations %>

@@ -1,6 +1,6 @@
 <%= render 'layouts/sidebar' %>
 
-<div class="col-md-10 col-lg-9">
+<div class="col-md-10 col-lg-6">
   <h1>フォロワー</h1>
   <% if @end_users.exists? %>
     <%= render 'end_user/end_users/index', end_users: @end_users %>
@@ -8,3 +8,5 @@
     <p>ユーザーはいません</p>
   <% end %>
 </div>
+
+<%= render 'layouts/admin_information', admin_informations: @admin_informations %>

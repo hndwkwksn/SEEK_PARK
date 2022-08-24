@@ -5,5 +5,6 @@ class EndUser::TagsController < ApplicationController
 	@content = params[:content]
 	parks = Tag.search_parks_for(@content)
 	@parks = Kaminari.paginate_array(parks).page(params[:page]).per(5)
+	@admin_informations = AdminInformation.all
   end
 end

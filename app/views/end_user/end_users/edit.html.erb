@@ -1,6 +1,6 @@
 <%= render 'layouts/sidebar' %>
 
-<div class="col-md-5 col-sm-10 mx-2 mx-sm-auto text-center rounded px-0 my-5 form-border">
+<div class="col-md-6 col-sm-10 mx-2 mx-sm-auto text-center rounded px-0 my-5 form-border">
   <h1>プロフィール編集</h1>
   <div class="errors">
     <%= render "layouts/errors", obj: @end_user %>
@@ -31,3 +31,5 @@
   </div>
 
 </div>
+
+<%= render 'layouts/admin_information', admin_informations: @admin_informations %>

@@ -1,9 +1,11 @@
 <%= render 'layouts/sidebar' %>
 
-<div class="col-md-10 col-lg-9">
+<div class="col-md-10 col-lg-6">
   <div class="d-f-jc-sp">
     <h1><%= @content %>のタグ一覧</h1>
     <%= render 'end_user/parks/search_form', parks: @q %>
   </div>
   <%= render 'end_user/parks/index', parks: @parks %>
 </div>
+
+<%= render 'layouts/admin_information', admin_informations: @admin_informations %>

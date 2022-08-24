@@ -1,6 +1,6 @@
 <%= render 'layouts/sidebar' %>
 
-<div class="col-md-8 col-sm-12 mx-sm-auto text-center rounded px-0 my-5 form-border">
+<div class="col-md-6 col-sm-12 mx-sm-auto text-center rounded px-0 my-5 form-border">
 
   <div class="form-border">
     <h1  id="room" data-room="<%= @room.id %>" data-end_user="<%= current_end_user.id %>"><%= @end_user.name %> さんとのチャット</h1>
@@ -39,3 +39,5 @@
   </div>
 
 </div>
+
+<%= render 'layouts/admin_information', admin_informations: @admin_informations %>
