@@ -1,7 +1,25 @@
-<div class="col-3">
-<h2>運営からのお知らせ</h2>
-<% admin_informations.each do |admin_information| %>
-  <p><%= admin_information.created_at.strftime('%Y/%m/%d') %></p>
-  <p><%= admin_information.information %></p>
-<% end %>
+<div class="col-md-3">
+
+  <div class="a-information-box aside">
+
+      <%= image_tag "admin_info.jpg", size: "200x200", id: "a-f-img" %>
+      <div class="info-menue">
+        <h2><strong>運営からのお知らせ</strong></h2>
+        <% admin_informations.each do |admin_information| %>
+        <div class="info-item">
+          <p><%= admin_information.created_at.strftime('%Y/%m/%d') %></p>
+          <p><%= admin_information.information %></p>
+        </div>
+        <% end %>
+      </div>
+
+  </div>
 </div>
+
+<script>
+$(document).ready( function() {
+  console.log('frix'+ $(".aside").length);
+  $(".aside").frix();
+
+});
+</script>

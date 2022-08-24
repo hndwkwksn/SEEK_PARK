@@ -15,6 +15,8 @@ import "../stylesheets/application";
 import '@fortawesome/fontawesome-free/js/all';
 import "./skippr.min"
 import "./slideshow"
+import "./jquery.frix.min"
+import "./jquery.frix"
 
 Rails.start()
 Turbolinks.start()

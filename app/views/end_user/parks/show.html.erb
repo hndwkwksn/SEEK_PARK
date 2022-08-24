@@ -1,6 +1,6 @@
 <%= render 'layouts/sidebar' %>
 
-<div class="col-md-10 col-lg-6">
+<div class="col-md-6 col-lg-6">
   <div class="post-detail mx-auto py-3">
     <div class="d-f-jc-sp">
       <h1>投稿詳細</h1>
@@ -24,6 +24,7 @@
           </div>
 
           <div class="col-10 w-100">
+
             <div class="d-f-jc-sp">
               <div class="card-title">
                 <%= link_to (@park.end_user),class: "p-user-name link-darkmode" do %>
@@ -32,17 +33,23 @@
               </div>
               <p><%= @park.created_at.strftime('%Y/%m/%d') %></p>
             </div>
+
             <p class="card-title"><%= @park.introduction %></p>
+
             <div class="mt-5">
               <% @park.tags.each do |tag| %>
                 <span><%= link_to tag.name, search_path(content: tag.name), class: "p-tagu-name" %></span>
               <% end %>
             </div>
+
             <div class="mt-5">
               <p class="card-title"><%= @park.address %></p>
             </div>
+
             <div id="show-map"></div>
+
             <div class="d-f-jc-sp">
+
               <div id="favorite_buttons_<%= @park.id %>">
                 <%= render "end_user/favorites/btn", park: @park %>
               </div>
@@ -57,8 +64,9 @@
                   <span>投稿を削除</span>
                 <% end %>
               </div>
+              <% end %>
+
             </div>
-            <% end %>
           </div>
 
         </div>
@@ -87,7 +95,6 @@
     </div>
   </div>
 </div>
-
 
 <%= render 'layouts/admin_information', admin_informations: @admin_informations %>
 
