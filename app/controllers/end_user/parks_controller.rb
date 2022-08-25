@@ -16,6 +16,7 @@ class EndUser::ParksController < ApplicationController
       @park.save_tags(tag_list)
       redirect_to park_path(@park), notice: "投稿しました。"
     else
+      @admin_informations = AdminInformation.all
       render 'new'
     end
   end
@@ -39,6 +40,7 @@ class EndUser::ParksController < ApplicationController
       @park.save_tags(tag_list)
       redirect_to park_path(@park), notice: "更新に成功しました。"
     else
+      @admin_informations = AdminInformation.all
       render "edit"
     end
   end

@@ -16,6 +16,7 @@ class EndUser::EndUsersController < ApplicationController
     if @end_user.update(end_user_params)
       redirect_to end_user_path(@end_user), notice: "You have updated user successfully."
     else
+      @admin_informations = AdminInformation.all
       render "edit"
     end
   end
