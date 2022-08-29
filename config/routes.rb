@@ -43,7 +43,6 @@ Rails.application.routes.draw do
    namespace :admin do
     patch '/end_users/withdraw' => 'end_users#withdraw', as: 'withdraw'
     resources :end_users, only: [:index, :edit, :update]
-    resources :parks, only: [:edit,:destroy]
     resources :admin_informations, only: [:index, :create, :destroy]
   end
 

@@ -1,5 +1,8 @@
 .p-tagu-name {
+  display: inline-block;
+  margin-top: 1rem;
   padding: 0.7rem 2rem;
+  color: #fff;
   background-color: #55c500;
   border-radius: 9999px;
 }
@@ -7,9 +10,6 @@
   color: #fff;
   background-color: #60605e;
   text-decoration: none;
-}
-.p-tagu-name {
-  color: #fff;
 }
 .p-name {
   color: #212529;
