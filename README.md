@@ -44,12 +44,16 @@ https://drive.google.com/file/d/1p3MBUy96ZXPVlSkhAib7I_-LHXeNTdyV/view?usp=shari
 - IDE：Cloud9
 
 ## 実装機能
-- ユーザー管理機能(Gemのdeviseを使用)
-![ログイン](https://user-images.githubusercontent.com/105696893/187417636-aaf9a4d5-5ae0-4461-9bab-10f29f2fd7c0.gif)
-- 投稿機能(投稿詳細・編集・削除)
-- いいね・コメント機能
-- フォロー機能
-- 相互フォローでのダイレクトメッセージ機能
+ユーザー管理機能(Gemのdeviseを使用)
+![login](https://user-images.githubusercontent.com/105696893/187419365-59c8f6f1-41a6-4082-8f02-4dd77ef07d7f.gif)
+
+投稿機能(投稿詳細・編集・削除)
+
+いいね・コメント機能
+
+フォロー機能
+
+相互フォローでのダイレクトメッセージ機能
 
 ## 使用素材
 <a href="https://pixabay.com/ja/users/pepperminting-633504/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=560435">Pepper Mint</a>による<a href="https://pixabay.com/ja//?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=560435">Pixabay</a>からの画像<br />
