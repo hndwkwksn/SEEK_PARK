@@ -7,12 +7,13 @@
       <h1>プロフィール</h1>
       <%= render 'end_user/parks/search_form' %>
     </div>
-    <div class="prf-container">
 
+    <div class="prf-container">
       <%= image_tag @end_user.get_profile_image(100,100), class:"prf-img mt-2 rounded-circle" %>
 
       <div class="d-f-jc-sp">
       	<p><strong><%= @end_user.name %></strong></p>
+
       	<div>
         <% if current_end_user != @end_user %>
           <div><%= render "end_user/relationships/btn", end_user: @end_user %></div>
@@ -35,6 +36,7 @@
             <span>フォロー中</span>
           <% end %>
         </div>
+
         <div class="followers">
           <%= link_to end_user_followers_path(@end_user), class: "p-user-name link-darkmode" do %>
             <span><strong><%= @end_user.followers.count %></strong></span>
@@ -50,7 +52,8 @@
           <% end %>
         <% end %>
       </div>
-      <div>
+
+      <div class="mt-3">
         <% if current_end_user != @end_user && current_end_user.following?(@end_user) && @end_user.following?(current_end_user) %>
           <%= link_to chat_path(@end_user.id) do %>
             <span class="link-btn link-darkmode">メッセージを送る</span>
