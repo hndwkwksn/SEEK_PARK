@@ -45,7 +45,7 @@ https://drive.google.com/file/d/1p3MBUy96ZXPVlSkhAib7I_-LHXeNTdyV/view?usp=shari
 
 ## 実装機能
 ユーザー管理機能(Gemのdeviseを使用)
-![login](https://user-images.githubusercontent.com/105696893/187419365-59c8f6f1-41a6-4082-8f02-4dd77ef07d7f.gif)
+![login_AdobeExpress](https://user-images.githubusercontent.com/105696893/187422496-8f336334-071f-4330-8d6a-cd3f35484b10.gif)
 
 投稿機能(投稿詳細・編集・削除)
 
