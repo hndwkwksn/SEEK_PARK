@@ -44,16 +44,26 @@ https://drive.google.com/file/d/1p3MBUy96ZXPVlSkhAib7I_-LHXeNTdyV/view?usp=shari
 - IDE：Cloud9
 
 ## 実装機能
-ユーザー管理機能(Gemのdeviseを使用)
+ユーザー管理機能(Gemのdeviseを使用)</br>
 ![sign_up](https://user-images.githubusercontent.com/105696893/187426832-2a302446-c25a-447c-adf2-49bcac4e693b.gif)
 
-投稿機能(投稿詳細・編集・削除)
+投稿機能(投稿詳細・編集・削除)</br>
+![new_post](https://user-images.githubusercontent.com/105696893/187430200-eb253bd7-1dc2-49fa-8149-6d18022783cf.gif)
 
-いいね・コメント機能
+いいね・コメント機能</br>
+![favorite comment](https://user-images.githubusercontent.com/105696893/187431166-e4609edf-b3e7-436b-aa67-38c7354fc894.gif)
 
-フォロー機能
+フォロー機能</br>
+![follow](https://user-images.githubusercontent.com/105696893/187432373-80c1232b-c1ac-474a-aad5-a7b1b9e469c6.gif)
 
-相互フォローでのダイレクトメッセージ機能
+相互フォローでのダイレクトメッセージ機能</br>
+![DM](https://user-images.githubusercontent.com/105696893/187433158-565697ae-0b65-43a2-bceb-665c5844f8aa.gif)
+
+スマホ対応!</br>
+![responsive](https://user-images.githubusercontent.com/105696893/187434307-97511a26-f016-4e4a-8957-ed242781f97e.gif)
+
+ダークモード対応!</br>
+![dark_mode](https://user-images.githubusercontent.com/105696893/187435171-0a2ede50-6e03-423d-baa4-5c2a0b98e33b.gif)
 
 ## 使用素材
 <a href="https://pixabay.com/ja/users/pepperminting-633504/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=560435">Pepper Mint</a>による<a href="https://pixabay.com/ja//?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=560435">Pixabay</a>からの画像<br />
