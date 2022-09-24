@@ -18,7 +18,7 @@
         <% if current_end_user != @end_user %>
           <div><%= render "end_user/relationships/btn", end_user: @end_user %></div>
         <% else %>
-          <% if @end_user.name != "guestuser" %>
+          <% if !@end_user.guest? %>
             <%= link_to edit_end_user_path(@end_user), class: "link-btn link-darkmode" do %>
               <span>プロフィール編集</span>
             <% end %>

@@ -55,4 +55,8 @@ class EndUser < ApplicationRecord
       end_user.name = "guestuser"
     end
   end
+
+  def guest?
+    name === "guestuser"
+  end
 end
